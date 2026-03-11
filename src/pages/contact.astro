@@ -1,0 +1,226 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="联系我们 - Emgran">
+  <section class="contact-hero">
+    <div class="container">
+      <h1>联系我们</h1>
+      <p class="hero-subtitle">加入设计伙伴计划或咨询合作</p>
+    </div>
+  </section>
+
+  <section class="contact-content">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-form-section">
+          <h2>发送消息</h2>
+          <form class="contact-form" action="#" method="POST">
+            <div class="form-group">
+              <label for="name">姓名</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">邮箱</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-group">
+              <label for="company">公司/组织（可选）</label>
+              <input type="text" id="company" name="company" />
+            </div>
+            <div class="form-group">
+              <label for="type">咨询类型</label>
+              <select id="type" name="type">
+                <option value="partner">设计伙伴计划</option>
+                <option value="product">产品咨询</option>
+                <option value="cooperation">商务合作</option>
+                <option value="other">其他</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">留言</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">发送消息</button>
+          </form>
+        </div>
+
+        <div class="contact-info-section">
+          <h2>联系方式</h2>
+          
+          <div class="info-card">
+            <h3>📧 邮箱</h3>
+            <p>contact@emgran.com</p>
+          </div>
+
+          <div class="info-card">
+            <h3>💬 微信</h3>
+            <p>EmgranOfficial</p>
+          </div>
+
+          <div class="info-card">
+            <h3>📍 地址</h3>
+            <p>上海市浦东新区<br/>中国（上海）自由贸易试验区</p>
+          </div>
+
+          <div class="info-card">
+            <h3>🤝 设计伙伴计划</h3>
+            <p>
+              我们正在招募早期设计伙伴，如果你：
+            </p>
+            <ul>
+              <li>是专业设计师或设计团队</li>
+              <li>对 AI 协作感兴趣</li>
+              <li>愿意参与产品共创</li>
+            </ul>
+            <p>欢迎联系我们，享受专属权益！</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .contact-hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 6rem 2rem;
+    text-align: center;
+  }
+
+  .contact-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.5rem;
+    opacity: 0.9;
+  }
+
+  .contact-content {
+    padding: 4rem 0;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+
+  .contact-form-section h2,
+  .contact-info-section h2 {
+    font-size: 2rem;
+    color: #1f2937;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .form-group label {
+    font-weight: 600;
+    color: #374151;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 0.75rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+  }
+
+  .form-group textarea {
+    resize: vertical;
+  }
+
+  .btn {
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+
+  .btn-primary {
+    background: #2563eb;
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background: #1d4ed8;
+  }
+
+  .info-card {
+    background: #f9fafb;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid #2563eb;
+  }
+
+  .info-card h3 {
+    font-size: 1.2rem;
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+  }
+
+  .info-card p {
+    color: #6b7280;
+    line-height: 1.6;
+  }
+
+  .info-card ul {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+  }
+
+  .info-card li {
+    color: #6b7280;
+    margin-bottom: 0.25rem;
+  }
+
+  @media (max-width: 900px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .contact-hero h1 {
+      font-size: 2.5rem;
+    }
+  }
+</style>

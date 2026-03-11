@@ -1,0 +1,116 @@
+---
+import Layout from './Layout.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  pubDate?: string;
+  author?: string;
+}
+
+const { title, description, pubDate, author } = Astro.props;
+---
+
+<Layout title={title} description={description}>
+  <article class="blog-post">
+    <header class="blog-header">
+      <h1>{title}</h1>
+      {pubDate && <p class="blog-meta">发表于 {pubDate}</p>}
+      {author && <p class="blog-meta">作者：{author}</p>}
+    </header>
+    <div class="blog-content">
+      <slot />
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .blog-post {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+  }
+
+  .blog-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #e5e7eb;
+  }
+
+  .blog-header h1 {
+    font-size: 2.5rem;
+    color: #1f2937;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .blog-meta {
+    color: #6b7280;
+    font-size: 0.9rem;
+  }
+
+  .blog-meta:not(:last-child) {
+    margin-right: 1rem;
+  }
+
+  .blog-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+  }
+
+  .blog-content h2 {
+    font-size: 1.8rem;
+    color: #1f2937;
+    margin: 2rem 0 1rem;
+  }
+
+  .blog-content h3 {
+    font-size: 1.4rem;
+    color: #374151;
+    margin: 1.5rem 0 0.75rem;
+  }
+
+  .blog-content p {
+    margin-bottom: 1.5rem;
+  }
+
+  .blog-content ul, .blog-content ol {
+    margin-bottom: 1.5rem;
+    padding-left: 2rem;
+  }
+
+  .blog-content li {
+    margin-bottom: 0.5rem;
+  }
+
+  .blog-content code {
+    background: #f3f4f6;
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.25rem;
+    font-family: 'Monaco', 'Consolas', monospace;
+    font-size: 0.9em;
+  }
+
+  .blog-content pre {
+    background: #1f2937;
+    color: #f9fafb;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+    margin-bottom: 1.5rem;
+  }
+
+  .blog-content pre code {
+    background: none;
+    padding: 0;
+    color: inherit;
+  }
+
+  .blog-content blockquote {
+    border-left: 4px solid #2563eb;
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+    color: #4b5563;
+    font-style: italic;
+  }
+</style>

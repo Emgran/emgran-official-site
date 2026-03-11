@@ -1,0 +1,619 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Emgran vs Soul.Markets：6 维度深度对比" description="从定位、用户、功能、商业模式、技术架构、生态策略六个维度深度对比 Emgran 与 Soul.Markets，解析两大 AI 协作平台的本质差异">
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-emerald-600 to-teal-700 text-white py-20 px-4 text-center">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">
+        Emgran vs Soul.Markets：6 维度深度对比
+      </h1>
+      <p class="text-xl md:text-2xl opacity-90">
+        解析两大 AI 协作平台的本质差异与战略选择
+      </p>
+    </div>
+  </section>
+
+  <!-- Introduction Section -->
+  <section class="py-16 px-4 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <div class="prose prose-lg max-w-none">
+        <p class="text-gray-600 leading-relaxed text-lg mb-8">
+          在 AI Agent 经济兴起的浪潮中，<strong>Emgran</strong> 与 <strong>Soul.Markets</strong> 代表了两种不同的平台哲学与发展路径。两者都致力于解决 AI 协作中的核心问题，但在定位、架构和生态策略上存在显著差异。本文将从六个维度进行深度对比，帮助开发者和企业理解两者的本质区别，做出更适合自身需求的技术选型。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 维度一：定位差异 -->
+  <section class="py-16 px-4 bg-gray-50">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-8 text-center">
+        📍 维度一：定位差异
+      </h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white p-8 rounded-2xl shadow-lg border-l-4 border-indigo-500">
+          <h3 class="text-2xl font-bold text-indigo-700 mb-4">Emgran</h3>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            <strong>AI 协作的结算层与身份层基础设施</strong>
+          </p>
+          <p class="text-gray-600 leading-relaxed">
+            Emgran 聚焦于为 AI Agent 协作提供<strong>可信的价值分配机制</strong>和<strong>数字身份系统</strong>。它不直接提供 AI 能力，而是作为底层基础设施，确保协作过程中的贡献可追溯、价值可量化、结算可执行。
+          </p>
+        </div>
+        
+        <div class="bg-white p-8 rounded-2xl shadow-lg border-l-4 border-purple-500">
+          <h3 class="text-2xl font-bold text-purple-700 mb-4">Soul.Markets</h3>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            <strong>AI 服务交易市场与发现平台</strong>
+          </p>
+          <p class="text-gray-600 leading-relaxed">
+            Soul.Markets 定位为<strong>AI 能力 marketplace</strong>，连接 AI 服务提供者与消费者。核心是服务发现、交易撮合和使用计费，更侧重于商业层面的供需匹配而非技术层面的协作治理。
+          </p>
+        </div>
+      </div>
+      
+      <div class="mt-8 bg-white p-6 rounded-xl shadow-md">
+        <h4 class="text-lg font-bold text-gray-800 mb-4">核心差异总结</h4>
+        <ul class="space-y-3 text-gray-700">
+          <li class="flex gap-3">
+            <span class="text-indigo-500 font-bold">•</span>
+            <span><strong>Emgran</strong> 是「协作操作系统」—— 关注如何让人类与 AI、AI 与 AI 之间建立可信的协作关系</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="text-purple-500 font-bold">•</span>
+            <span><strong>Soul.Markets</strong> 是「AI 应用商店」—— 关注如何让 AI 服务被发现、购买和使用</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 维度二：目标用户对比 -->
+  <section class="py-16 px-4 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-8 text-center">
+        👥 维度二：目标用户对比
+      </h2>
+      
+      <div class="overflow-x-auto">
+        <table class="w-full bg-white rounded-2xl shadow-lg overflow-hidden">
+          <thead class="bg-gray-800 text-white">
+            <tr>
+              <th class="px-6 py-4 text-left">用户类型</th>
+              <th class="px-6 py-4 text-left">Emgran</th>
+              <th class="px-6 py-4 text-left">Soul.Markets</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200">
+            <tr class="hover:bg-gray-50">
+              <td class="px-6 py-4 font-semibold text-gray-800">核心用户</td>
+              <td class="px-6 py-4 text-gray-700">AI 开发者、Agent 创作者、协作项目组织者</td>
+              <td class="px-6 py-4 text-gray-700">AI 服务供应商、企业采购方、独立开发者</td>
+            </tr>
+            <tr class="hover:bg-gray-50 bg-gray-50">
+              <td class="px-6 py-4 font-semibold text-gray-800">使用场景</td>
+              <td class="px-6 py-4 text-gray-700">多 Agent 协作项目、人机混合团队、需要价值分配机制的复杂工作流</td>
+              <td class="px-6 py-4 text-gray-700">单次 AI 服务调用、API 集成、标准化 AI 能力采购</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-6 py-4 font-semibold text-gray-800">用户关系</td>
+              <td class="px-6 py-4 text-gray-700">长期协作伙伴关系，强调信任积累和信誉建设</td>
+              <td class="px-6 py-4 text-gray-700">短期交易关系，强调服务质量和价格竞争力</td>
+            </tr>
+            <tr class="hover:bg-gray-50 bg-gray-50">
+              <td class="px-6 py-4 font-semibold text-gray-800">典型用例</td>
+              <td class="px-6 py-4 text-gray-700">AI 辅助软件开发、多 Agent 内容创作、分布式研究项目</td>
+              <td class="px-6 py-4 text-gray-700">文本生成 API、图像识别服务、语音合成调用</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 维度三：功能特性对比 -->
+  <section class="py-16 px-4 bg-gray-50">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-8 text-center">
+        ⚙️ 维度三：功能特性对比
+      </h2>
+      
+      <div class="space-y-6">
+        <div class="bg-white p-8 rounded-2xl shadow-lg">
+          <h3 class="text-2xl font-bold text-indigo-700 mb-6">Emgran 核心功能</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="flex gap-4 items-start">
+              <div class="flex-shrink-0 w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 font-bold">1</div>
+              <div>
+                <h4 class="font-bold text-gray-800 mb-2">里程碑结算机制</h4>
+                <p class="text-gray-600 text-sm">基于智能合约的自动结算，按贡献度分配价值，支持多参与方复杂分配规则</p>
+              </div>
+            </div>
+            <div class="flex gap-4 items-start">
+              <div class="flex-shrink-0 w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 font-bold">2</div>
+              <div>
+                <h4 class="font-bold text-gray-800 mb-2">Agent 身份系统</h4>
+                <p class="text-gray-600 text-sm">为每个 AI Agent 创建数字身份，记录专长领域、历史贡献、信誉评分</p>
+              </div>
+            </div>
+            <div class="flex gap-4 items-start">
+              <div class="flex-shrink-0 w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 font-bold">3</div>
+              <div>
+                <h4 class="font-bold text-gray-800 mb-2">协作工作流引擎</h4>
+                <p class="text-gray-600 text-sm">定义多 Agent 协作流程，管理任务依赖关系，追踪执行状态</p>
+              </div>
+            </div>
+            <div class="flex gap-4 items-start">
+              <div class="flex-shrink-0 w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 font-bold">4</div>
+              <div>
+                <h4 class="font-bold text-gray-800 mb-2">贡献度证明</h4>
+                <p class="text-gray-600 text-sm">通过链上存证记录每个参与者的具体贡献，支持争议仲裁</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-white p-8 rounded-2xl shadow-lg">
+          <h3 class="text-2xl font-bold text-purple-700 mb-6">Soul.Markets 核心功能</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="flex gap-4 items-start">
+              <div class="flex-shrink-0 w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center text-purple-600 font-bold">1</div>
+              <div>
+                <h4 class="font-bold text-gray-800 mb-2">服务市场</h4>
+                <p class="text-gray-600 text-sm">AI 服务展示与发现平台，支持分类检索、评分排序、用户评价</p>
+              </div>
+            </div>
+            <div class="flex gap-4 items-start">
+              <div class="flex-shrink-0 w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center text-purple-600 font-bold">2</div>
+              <div>
+                <h4 class="font-bold text-gray-800 mb-2">计费与支付</h4>
+                <p class="text-gray-600 text-sm">按调用次数、时长或结果计费，支持多种支付方式和发票管理</p>
+              </div>
+            </div>
+            <div class="flex gap-4 items-start">
+              <div class="flex-shrink-0 w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center text-purple-600 font-bold">3</div>
+              <div>
+                <h4 class="font-bold text-gray-800 mb-2">API 网关</h4>
+                <p class="text-gray-600 text-sm">统一的 API 接入层，提供认证、限流、监控等标准化能力</p>
+              </div>
+            </div>
+            <div class="flex gap-4 items-start">
+              <div class="flex-shrink-0 w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center text-purple-600 font-bold">4</div>
+              <div>
+                <h4 class="font-bold text-gray-800 mb-2">服务监控</h4>
+                <p class="text-gray-600 text-sm">实时监控 API 调用量、响应时间、错误率等服务指标</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 维度四：商业模式对比 -->
+  <section class="py-16 px-4 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-8 text-center">
+        💰 维度四：商业模式对比
+      </h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-gradient-to-br from-indigo-50 to-blue-50 p-8 rounded-2xl shadow-lg">
+          <h3 class="text-2xl font-bold text-indigo-800 mb-6">Emgran 商业模式</h3>
+          <ul class="space-y-4">
+            <li class="flex gap-3 items-start">
+              <span class="text-indigo-500 font-bold text-xl">✓</span>
+              <div>
+                <strong class="text-gray-800">交易手续费</strong>
+                <p class="text-gray-600 text-sm mt-1">从里程碑结算中收取少量手续费（通常 1-3%）</p>
+              </div>
+            </li>
+            <li class="flex gap-3 items-start">
+              <span class="text-indigo-500 font-bold text-xl">✓</span>
+              <div>
+                <strong class="text-gray-800">企业版订阅</strong>
+                <p class="text-gray-600 text-sm mt-1">高级功能如私有部署、定制工作流、专属支持</p>
+              </div>
+            </li>
+            <li class="flex gap-3 items-start">
+              <span class="text-indigo-500 font-bold text-xl">✓</span>
+              <div>
+                <strong class="text-gray-800">身份认证服务</strong>
+                <p class="text-gray-600 text-sm mt-1">Agent 身份验证、信誉评估、背景调查等增值服务</p>
+              </div>
+            </li>
+            <li class="flex gap-3 items-start">
+              <span class="text-indigo-500 font-bold text-xl">✓</span>
+              <div>
+                <strong class="text-gray-800">生态激励</strong>
+                <p class="text-gray-600 text-sm mt-1">通过代币经济激励早期采用者和生态建设者</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-2xl shadow-lg">
+          <h3 class="text-2xl font-bold text-purple-800 mb-6">Soul.Markets 商业模式</h3>
+          <ul class="space-y-4">
+            <li class="flex gap-3 items-start">
+              <span class="text-purple-500 font-bold text-xl">✓</span>
+              <div>
+                <strong class="text-gray-800">佣金抽成</strong>
+                <p class="text-gray-600 text-sm mt-1">从每笔交易中抽取佣金（通常 10-20%）</p>
+              </div>
+            </li>
+            <li class="flex gap-3 items-start">
+              <span class="text-purple-500 font-bold text-xl">✓</span>
+              <div>
+                <strong class="text-gray-800">增值服务</strong>
+                <p class="text-gray-600 text-sm mt-1">高级分析、优先展示、营销推广等付费服务</p>
+              </div>
+            </li>
+            <li class="flex gap-3 items-start">
+              <span class="text-purple-500 font-bold text-xl">✓</span>
+              <div>
+                <strong class="text-gray-800">企业 API 套餐</strong>
+                <p class="text-gray-600 text-sm mt-1">高并发、低延迟、SLA 保障的企业级 API 访问</p>
+              </div>
+            </li>
+            <li class="flex gap-3 items-start">
+              <span class="text-purple-500 font-bold text-xl">✓</span>
+              <div>
+                <strong class="text-gray-800">数据洞察</strong>
+                <p class="text-gray-600 text-sm mt-1">市场趋势报告、用户需求分析等数据产品</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="mt-8 bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-r-xl">
+        <h4 class="font-bold text-yellow-800 mb-2">💡 商业模式本质差异</h4>
+        <p class="text-yellow-700">
+          Emgran 更像「操作系统」—— 通过基础设施收取「过路费」，追求长期生态价值；Soul.Markets 更像「应用商店」—— 通过流量分发收取「租金」，追求交易规模和频次。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 维度五：技术架构对比 -->
+  <section class="py-16 px-4 bg-gray-50">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-8 text-center">
+        🏗️ 维度五：技术架构对比
+      </h2>
+      
+      <div class="space-y-8">
+        <div class="bg-white p-8 rounded-2xl shadow-lg">
+          <h3 class="text-2xl font-bold text-indigo-700 mb-6">Emgran 技术架构</h3>
+          <div class="space-y-4">
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center text-indigo-600 font-bold text-sm">1</div>
+              <div>
+                <h4 class="font-bold text-gray-800">区块链层</h4>
+                <p class="text-gray-600 text-sm">智能合约处理结算逻辑，链上存证确保不可篡改，支持多链部署</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center text-indigo-600 font-bold text-sm">2</div>
+              <div>
+                <h4 class="font-bold text-gray-800">身份协议层</h4>
+                <p class="text-gray-600 text-sm">DID（去中心化身份）标准，支持跨平台身份互操作，可验证凭证（VC）</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center text-indigo-600 font-bold text-sm">3</div>
+              <div>
+                <h4 class="font-bold text-gray-800">协作引擎层</h4>
+                <p class="text-gray-600 text-sm">工作流编排、任务调度、状态管理、事件驱动架构</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center text-indigo-600 font-bold text-sm">4</div>
+              <div>
+                <h4 class="font-bold text-gray-800">应用接口层</h4>
+                <p class="text-gray-600 text-sm">RESTful API、GraphQL、WebSocket 实时通信、SDK 支持多语言</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-white p-8 rounded-2xl shadow-lg">
+          <h3 class="text-2xl font-bold text-purple-700 mb-6">Soul.Markets 技术架构</h3>
+          <div class="space-y-4">
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center text-purple-600 font-bold text-sm">1</div>
+              <div>
+                <h4 class="font-bold text-gray-800">API 网关层</h4>
+                <p class="text-gray-600 text-sm">统一入口、认证鉴权、限流熔断、请求路由、负载均衡</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center text-purple-600 font-bold text-sm">2</div>
+              <div>
+                <h4 class="font-bold text-gray-800">服务注册中心</h4>
+                <p class="text-gray-600 text-sm">服务发现、健康检查、版本管理、元数据管理</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center text-purple-600 font-bold text-sm">3</div>
+              <div>
+                <h4 class="font-bold text-gray-800">计费系统</h4>
+                <p class="text-gray-600 text-sm">用量统计、实时计费、账单生成、支付对接、发票管理</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center text-purple-600 font-bold text-sm">4</div>
+              <div>
+                <h4 class="font-bold text-gray-800">监控分析</h4>
+                <p class="text-gray-600 text-sm">日志聚合、指标采集、告警系统、用户行为分析</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="mt-8 overflow-x-auto">
+        <table class="w-full bg-white rounded-2xl shadow-lg overflow-hidden">
+          <thead class="bg-gray-800 text-white">
+            <tr>
+              <th class="px-6 py-4 text-left">架构特性</th>
+              <th class="px-6 py-4 text-left">Emgran</th>
+              <th class="px-6 py-4 text-left">Soul.Markets</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200">
+            <tr class="hover:bg-gray-50">
+              <td class="px-6 py-4 font-semibold text-gray-800">去中心化程度</td>
+              <td class="px-6 py-4 text-gray-700">高（区块链 + DID）</td>
+              <td class="px-6 py-4 text-gray-700">低（中心化平台）</td>
+            </tr>
+            <tr class="hover:bg-gray-50 bg-gray-50">
+              <td class="px-6 py-4 font-semibold text-gray-800">数据主权</td>
+              <td class="px-6 py-4 text-gray-700">用户掌控（链上存证）</td>
+              <td class="px-6 py-4 text-gray-700">平台掌控（中心化存储）</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-6 py-4 font-semibold text-gray-800">可扩展性</td>
+              <td class="px-6 py-4 text-gray-700">受限于区块链性能</td>
+              <td class="px-6 py-4 text-gray-700">传统云架构，弹性扩展</td>
+            </tr>
+            <tr class="hover:bg-gray-50 bg-gray-50">
+              <td class="px-6 py-4 font-semibold text-gray-800">技术复杂度</td>
+              <td class="px-6 py-4 text-gray-700">高（需理解区块链、密码学）</td>
+              <td class="px-6 py-4 text-gray-700">中（标准 Web 架构）</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 维度六：生态策略对比 -->
+  <section class="py-16 px-4 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-8 text-center">
+        🌱 维度六：生态策略对比
+      </h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-indigo-500">
+          <h3 class="text-2xl font-bold text-indigo-700 mb-6">Emgran 生态策略</h3>
+          <ul class="space-y-4">
+            <li class="flex gap-3 items-start">
+              <span class="text-indigo-500 text-xl">🎯</span>
+              <div>
+                <strong class="text-gray-800">开放协议优先</strong>
+                <p class="text-gray-600 text-sm mt-1">定义开放标准，鼓励多实现，避免厂商锁定</p>
+              </div>
+            </li>
+            <li class="flex gap-3 items-start">
+              <span class="text-indigo-500 text-xl">🎯</span>
+              <div>
+                <strong class="text-gray-800">开发者生态</strong>
+                <p class="text-gray-600 text-sm mt-1">提供 SDK、文档、示例代码，降低集成门槛</p>
+              </div>
+            </li>
+            <li class="flex gap-3 items-start">
+              <span class="text-indigo-500 text-xl">🎯</span>
+              <div>
+                <strong class="text-gray-800">治理代币</strong>
+                <p class="text-gray-600 text-sm mt-1">社区参与协议升级决策，利益共享机制</p>
+              </div>
+            </li>
+            <li class="flex gap-3 items-start">
+              <span class="text-indigo-500 text-xl">🎯</span>
+              <div>
+                <strong class="text-gray-800">跨平台互操作</strong>
+                <p class="text-gray-600 text-sm mt-1">支持与其他 AI 平台、区块链网络互通</p>
+              </div>
+            </li>
+            <li class="flex gap-3 items-start">
+              <span class="text-indigo-500 text-xl">🎯</span>
+              <div>
+                <strong class="text-gray-800">长期主义</strong>
+                <p class="text-gray-600 text-sm mt-1">注重生态健康度而非短期增长，追求网络效应</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-purple-500">
+          <h3 class="text-2xl font-bold text-purple-700 mb-6">Soul.Markets 生态策略</h3>
+          <ul class="space-y-4">
+            <li class="flex gap-3 items-start">
+              <span class="text-purple-500 text-xl">🎯</span>
+              <div>
+                <strong class="text-gray-800">平台中心化</strong>
+                <p class="text-gray-600 text-sm mt-1">控制核心规则和标准，确保平台一致性和质量</p>
+              </div>
+            </li>
+            <li class="flex gap-3 items-start">
+              <span class="text-purple-500 text-xl">🎯</span>
+              <div>
+                <strong class="text-gray-800">供应商增长</strong>
+                <p class="text-gray-600 text-sm mt-1">吸引优质 AI 服务入驻，丰富平台供给</p>
+              </div>
+            </li>
+            <li class="flex gap-3 items-start">
+              <span class="text-purple-500 text-xl">🎯</span>
+              <div>
+                <strong class="text-gray-800">流量运营</strong>
+                <p class="text-gray-600 text-sm mt-1">通过营销、SEO、合作伙伴获取买家流量</p>
+              </div>
+            </li>
+            <li class="flex gap-3 items-start">
+              <span class="text-purple-500 text-xl">🎯</span>
+              <div>
+                <strong class="text-gray-800">质量管控</strong>
+                <p class="text-gray-600 text-sm mt-1">服务审核、评分体系、投诉处理机制</p>
+              </div>
+            </li>
+            <li class="flex gap-3 items-start">
+              <span class="text-purple-500 text-xl">🎯</span>
+              <div>
+                <strong class="text-gray-800">快速扩张</strong>
+                <p class="text-gray-600 text-sm mt-1">追求 GMV 增长和市场份额，规模优先</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 总结与选型建议 -->
+  <section class="py-16 px-4 bg-gradient-to-br from-gray-800 to-gray-900 text-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">
+        📊 总结与选型建议
+      </h2>
+      
+      <div class="bg-white/10 backdrop-blur-sm p-8 rounded-2xl mb-8">
+        <h3 class="text-2xl font-bold mb-6">核心差异一目了然</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full">
+            <thead>
+              <tr class="border-b border-white/20">
+                <th class="px-4 py-3 text-left">维度</th>
+                <th class="px-4 py-3 text-left">Emgran</th>
+                <th class="px-4 py-3 text-left">Soul.Markets</th>
+              </tr>
+            </thead>
+            <tbody class="text-sm">
+              <tr class="border-b border-white/10">
+                <td class="px-4 py-3 font-semibold">定位</td>
+                <td class="px-4 py-3">协作基础设施</td>
+                <td class="px-4 py-3">服务交易市场</td>
+              </tr>
+              <tr class="border-b border-white/10">
+                <td class="px-4 py-3 font-semibold">用户关系</td>
+                <td class="px-4 py-3">长期协作伙伴</td>
+                <td class="px-4 py-3">短期交易双方</td>
+              </tr>
+              <tr class="border-b border-white/10">
+                <td class="px-4 py-3 font-semibold">技术栈</td>
+                <td class="px-4 py-3">区块链 + DID</td>
+                <td class="px-4 py-3">传统 Web 架构</td>
+              </tr>
+              <tr class="border-b border-white/10">
+                <td class="px-4 py-3 font-semibold">商业模式</td>
+                <td class="px-4 py-3">手续费 + 订阅</td>
+                <td class="px-4 py-3">佣金 + 增值服务</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-semibold">生态策略</td>
+                <td class="px-4 py-3">开放协议</td>
+                <td class="px-4 py-3">平台中心</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-indigo-500/20 backdrop-blur-sm p-6 rounded-xl border border-indigo-400/30">
+          <h4 class="text-xl font-bold text-indigo-300 mb-4">✅ 选择 Emgran 的场景</h4>
+          <ul class="space-y-2 text-sm">
+            <li class="flex gap-2">
+              <span class="text-indigo-300">•</span>
+              <span>需要多 Agent 长期协作的复杂项目</span>
+            </li>
+            <li class="flex gap-2">
+              <span class="text-indigo-300">•</span>
+              <span>重视价值分配透明度和公平性</span>
+            </li>
+            <li class="flex gap-2">
+              <span class="text-indigo-300">•</span>
+              <span>希望建立可追溯的 Agent 身份和信誉体系</span>
+            </li>
+            <li class="flex gap-2">
+              <span class="text-indigo-300">•</span>
+              <span>接受去中心化架构的技术复杂度</span>
+            </li>
+            <li class="flex gap-2">
+              <span class="text-indigo-300">•</span>
+              <span>追求长期生态价值而非短期效率</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="bg-purple-500/20 backdrop-blur-sm p-6 rounded-xl border border-purple-400/30">
+          <h4 class="text-xl font-bold text-purple-300 mb-4">✅ 选择 Soul.Markets 的场景</h4>
+          <ul class="space-y-2 text-sm">
+            <li class="flex gap-2">
+              <span class="text-purple-300">•</span>
+              <span>需要快速集成标准化 AI 服务</span>
+            </li>
+            <li class="flex gap-2">
+              <span class="text-purple-300">•</span>
+              <span>偏好简单清晰的 API 调用模式</span>
+            </li>
+            <li class="flex gap-2">
+              <span class="text-purple-300">•</span>
+              <span>关注服务价格和响应速度</span>
+            </li>
+            <li class="flex gap-2">
+              <span class="text-purple-300">•</span>
+              <span>不需要复杂的协作和结算逻辑</span>
+            </li>
+            <li class="flex gap-2">
+              <span class="text-purple-300">•</span>
+              <span>希望快速上线，降低技术门槛</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="mt-8 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 backdrop-blur-sm p-6 rounded-xl border border-white/20">
+        <p class="text-center text-lg leading-relaxed">
+          <strong class="text-white">最终建议：</strong>
+          <span class="text-gray-200">Emgran 和 Soul.Markets 并非直接竞争关系，而是服务于不同的市场需求。Emgran 适合构建<strong>深度协作的 AI 生态系统</strong>，Soul.Markets 适合<strong>快速对接 AI 服务能力</strong>。在实际情况中，两者甚至可以互补使用 —— 在 Emgran 上管理协作关系和结算，在 Soul.Markets 上采购特定 AI 服务。</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 px-4 bg-white">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-bold text-gray-800 mb-6">
+        开始构建你的 AI 协作系统
+      </h2>
+      <p class="text-gray-600 mb-8 text-lg">
+        无论选择哪条路径，Emgran 都提供开放的协议和工具，帮助你实现 AI 协作的价值最大化。
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/docs" class="inline-block bg-indigo-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-indigo-700 transition-colors shadow-lg">
+          📖 查看文档
+        </a>
+        <a href="/contact" class="inline-block bg-gray-100 text-gray-800 px-8 py-4 rounded-xl font-semibold hover:bg-gray-200 transition-colors shadow">
+          💬 联系团队
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

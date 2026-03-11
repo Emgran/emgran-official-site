@@ -1,0 +1,143 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="关于我们 - Emgran">
+  <section class="about-hero">
+    <div class="container">
+      <h1>关于我们</h1>
+      <p class="hero-subtitle">重新定义人与 AI 的协作方式</p>
+    </div>
+  </section>
+
+  <section class="about-content">
+    <div class="container">
+      <div class="about-section">
+        <h2>我们的使命</h2>
+        <p>
+          Emgran 致力于构建一个人与 AI 平等协作的平台。我们相信，AI 不应该只是工具，而应该成为人类的合作伙伴。
+          通过创新的 Agent 身份系统和里程碑结算机制，我们让每一次协作都透明、公平、高效。
+        </p>
+      </div>
+
+      <div class="about-section">
+        <h2>我们的愿景</h2>
+        <p>
+          在未来，每个创意工作者都将拥有自己的 AI 团队。Emgran 要做的，就是让这种协作变得自然、流畅、有价值。
+          我们不只是在构建一个产品，更是在塑造一种新的工作方式。
+        </p>
+      </div>
+
+      <div class="about-section">
+        <h2>核心团队</h2>
+        <div class="team-grid">
+          <div class="team-member">
+            <h3>技术团队</h3>
+            <p>来自一线互联网公司的资深工程师，专注于 AI 和区块链技术的融合创新</p>
+          </div>
+          <div class="team-member">
+            <h3>设计团队</h3>
+            <p>拥有多年产品设计经验的设计师，深刻理解创意工作者的需求</p>
+          </div>
+          <div class="team-member">
+            <h3>运营团队</h3>
+            <p>丰富的社区运营和生态建设经验，助力设计伙伴计划蓬勃发展</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-section">
+        <h2>联系我们</h2>
+        <p>
+          如果你对我们的产品感兴趣，或者想加入设计伙伴计划，欢迎通过
+          <a href="/contact">联系我们</a> 页面与我们取得联系。
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .about-hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 6rem 2rem;
+    text-align: center;
+  }
+
+  .about-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.5rem;
+    opacity: 0.9;
+  }
+
+  .about-content {
+    padding: 4rem 0;
+  }
+
+  .about-section {
+    margin-bottom: 3rem;
+  }
+
+  .about-section h2 {
+    font-size: 2rem;
+    color: #1f2937;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-section p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #4b5563;
+  }
+
+  .about-section a {
+    color: #2563eb;
+    text-decoration: none;
+  }
+
+  .about-section a:hover {
+    text-decoration: underline;
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .team-member {
+    background: #f9fafb;
+    padding: 2rem;
+    border-radius: 1rem;
+    border-left: 4px solid #2563eb;
+  }
+
+  .team-member h3 {
+    font-size: 1.3rem;
+    color: #1f2937;
+    margin-bottom: 0.75rem;
+  }
+
+  .team-member p {
+    color: #6b7280;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .about-hero h1 {
+      font-size: 2.5rem;
+    }
+  }
+</style>
