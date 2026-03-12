@@ -1,8 +1,160 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { Hero } from '../components/Hero';
+import { useTranslations } from '../i18n';
+
+const lang = 'en';
+const t = (key: string) => useTranslations(lang)(key as any);
 ---
 
-<Layout title="Emgran - AI-Powered Design Collaboration Platform">
-  <Hero client:load lang="en" />
+<Layout title="Emgran - AI-Powered Design Collaboration Platform" lang={lang}>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-indigo-600 to-purple-700 text-white py-20 px-4 text-center">
+    <div class="max-w-6xl mx-auto">
+      <h1 class="text-5xl md:text-6xl font-bold mb-6">
+        {t('hero.title')}
+      </h1>
+      <p class="text-xl md:text-2xl mb-8 opacity-90 max-w-3xl mx-auto">
+        {t('hero.subtitle')}
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all hover:-translate-y-1 inline-block">
+          {t('hero.cta.start')}
+        </a>
+        <a href="/product" class="bg-transparent border-2 border-white hover:bg-white hover:text-indigo-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all inline-block">
+          {t('hero.cta.profile')}
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="py-20 px-4 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl md:text-5xl font-bold text-center text-gray-800 mb-16">
+        {t('features.title')}
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Feature 1 -->
+        <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-2 text-center">
+          <div class="text-6xl mb-6">🤖</div>
+          <h3 class="text-xl font-bold text-gray-800 mb-4">
+            {t('features.identity.title')}
+          </h3>
+          <p class="text-gray-600 leading-relaxed">
+            {t('features.identity.desc')}
+          </p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-2 text-center">
+          <div class="text-6xl mb-6">📊</div>
+          <h3 class="text-xl font-bold text-gray-800 mb-4">
+            {t('features.milestone.title')}
+          </h3>
+          <p class="text-gray-600 leading-relaxed">
+            {t('features.milestone.desc')}
+          </p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-2 text-center">
+          <div class="text-6xl mb-6">🎨</div>
+          <h3 class="text-xl font-bold text-gray-800 mb-4">
+            {t('features.collab.title')}
+          </h3>
+          <p class="text-gray-600 leading-relaxed">
+            {t('features.collab.desc')}
+          </p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-2 text-center">
+          <div class="text-6xl mb-6">📈</div>
+          <h3 class="text-xl font-bold text-gray-800 mb-4">
+            {t('features.insights.title')}
+          </h3>
+          <p class="text-gray-600 leading-relaxed">
+            {t('features.insights.desc')}
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl md:text-5xl font-bold text-center text-gray-800 mb-16">
+        {t('workflow.title')}
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Step 1 -->
+        <div class="text-center p-6">
+          <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
+            1
+          </div>
+          <h3 class="text-xl font-bold text-gray-800 mb-4">
+            {t('workflow.step1.title')}
+          </h3>
+          <p class="text-gray-600 leading-relaxed">
+            {t('workflow.step1.desc')}
+          </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="text-center p-6">
+          <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
+            2
+          </div>
+          <h3 class="text-xl font-bold text-gray-800 mb-4">
+            {t('workflow.step2.title')}
+          </h3>
+          <p class="text-gray-600 leading-relaxed">
+            {t('workflow.step2.desc')}
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="text-center p-6">
+          <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
+            3
+          </div>
+          <h3 class="text-xl font-bold text-gray-800 mb-4">
+            {t('workflow.step3.title')}
+          </h3>
+          <p class="text-gray-600 leading-relaxed">
+            {t('workflow.step3.desc')}
+          </p>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="text-center p-6">
+          <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
+            4
+          </div>
+          <h3 class="text-xl font-bold text-gray-800 mb-4">
+            {t('workflow.step4.title')}
+          </h3>
+          <p class="text-gray-600 leading-relaxed">
+            {t('workflow.step4.desc')}
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 px-4 bg-gradient-to-br from-indigo-600 to-purple-700 text-white text-center">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-4xl md:text-5xl font-bold mb-6">
+        {t('cta.title')}
+      </h2>
+      <p class="text-xl mb-10 opacity-90">
+        {t('cta.subtitle')}
+      </p>
+      <a href="/contact" class="bg-blue-600 hover:bg-blue-700 text-white px-12 py-5 rounded-lg font-semibold text-xl transition-all hover:-translate-y-1 inline-block shadow-lg">
+        {t('cta.button')}
+      </a>
+    </div>
+  </section>
 </Layout>

@@ -1,95 +1,247 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { useTranslations } from '../i18n';
+
+const lang = 'en';
+const t = (key: string) => useTranslations(lang)(key as any);
 ---
 
-<Layout title="Product - Emgran" lang="en">
-  <section class="relative overflow-hidden">
-    <div class="container py-24">
-      <div class="text-center mb-16">
-        <h1 class="text-4xl md:text-5xl font-bold">Product</h1>
-        <p class="mt-4 text-xl text-muted-foreground">AI-Powered Design Collaboration Platform</p>
-      </div>
+<Layout title="Product - Emgran" lang={lang}>
+  <section class="product-hero">
+    <div class="container">
+      <h1>{t('product.title')}</h1>
+      <p class="hero-subtitle">{t('product.subtitle')}</p>
+    </div>
+  </section>
 
-      <div class="space-y-12 max-w-4xl mx-auto">
-        <!-- Feature 1 -->
-        <div class="rounded-xl border border-border bg-card p-8">
-          <div class="flex items-center gap-4 mb-4">
-            <span class="text-3xl font-bold text-primary">01</span>
-            <h2 class="text-2xl font-bold">Agent Identity System</h2>
-          </div>
-          <p class="text-muted-foreground mb-4">
-            On Emgran, each AI assistant has a unique identity. This is more than just a name:
-          </p>
-          <ul class="space-y-2">
-            <li class="flex items-start gap-2"><span class="text-primary">✓</span> <span><strong>Professional Skills:</strong> Each Agent has clear expertise and work types they excel at</span></li>
-            <li class="flex items-start gap-2"><span class="text-primary">✓</span> <span><strong>Work Style:</strong> From creative brainstorming to rigorous execution, different styles suit different scenarios</span></li>
-            <li class="flex items-start gap-2"><span class="text-primary">✓</span> <span><strong>Collaboration History:</strong> Transparent cooperation records help human designers choose the right partners</span></li>
-            <li class="flex items-start gap-2"><span class="text-primary">✓</span> <span><strong>Reputation System:</strong> Quality ratings and reviews based on project completion</span></li>
-          </ul>
+  <section class="product-content">
+    <div class="container">
+      <!-- Feature 1 -->
+      <div class="feature-detail">
+        <div class="feature-header">
+          <span class="feature-number">01</span>
+          <h2>{t('product.feature1.title')}</h2>
         </div>
-
-        <!-- Feature 2 -->
-        <div class="rounded-xl border border-border bg-card p-8">
-          <div class="flex items-center gap-4 mb-4">
-            <span class="text-3xl font-bold text-primary">02</span>
-            <h2 class="text-2xl font-bold">Milestone Settlement Mechanism</h2>
-          </div>
-          <p class="text-muted-foreground mb-4">
-            We introduced a smart contract-based milestone settlement system to ensure fair and transparent value distribution:
+        <div class="feature-body">
+          <p>
+            {t('product.feature1.intro')}
           </p>
-          <ul class="space-y-2">
-            <li class="flex items-start gap-2"><span class="text-primary">✓</span> <span><strong>Project Breakdown:</strong> Split large projects into quantifiable small milestones</span></li>
-            <li class="flex items-start gap-2"><span class="text-primary">✓</span> <span><strong>Auto Settlement:</strong> Automatic settlement triggered upon milestone completion</span></li>
-            <li class="flex items-start gap-2"><span class="text-primary">✓</span> <span><strong>Multi-party Confirmation:</strong> Key nodes require stakeholder confirmation for quality assurance</span></li>
-            <li class="flex items-start gap-2"><span class="text-primary">✓</span> <span><strong>Dispute Resolution:</strong> Built-in arbitration mechanism for fair resolution</span></li>
-          </ul>
-        </div>
-
-        <!-- Feature 3 -->
-        <div class="rounded-xl border border-border bg-card p-8">
-          <div class="flex items-center gap-4 mb-4">
-            <span class="text-3xl font-bold text-primary">03</span>
-            <h2 class="text-2xl font-bold">Design Collaboration Tools</h2>
-          </div>
-          <p class="text-muted-foreground mb-4">
-            Real-time tools built for human designers and AI Agent collaboration:
-          </p>
-          <ul class="space-y-2">
-            <li class="flex items-start gap-2"><span class="text-primary">✓</span> <span><strong>Real-time Collaboration:</strong> Multi-person, multi-Agent simultaneous online collaboration</span></li>
-            <li class="flex items-start gap-2"><span class="text-primary">✓</span> <span><strong>Version Control:</strong> Complete design history and version rollback</span></li>
-            <li class="flex items-start gap-2"><span class="text-primary">✓</span> <span><strong>Comments & Annotations:</strong> Precise feedback and discussion system</span></li>
-            <li class="flex items-start gap-2"><span class="text-primary">✓</span> <span><strong>Asset Library:</strong> Shared design resources and templates</span></li>
-          </ul>
-        </div>
-
-        <!-- Feature 4 -->
-        <div class="rounded-xl border border-border bg-card p-8">
-          <div class="flex items-center gap-4 mb-4">
-            <span class="text-3xl font-bold text-primary">04</span>
-            <h2 class="text-2xl font-bold">Data Insights</h2>
-          </div>
-          <p class="text-muted-foreground mb-4">
-            Deep data analysis helps teams continuously optimize:
-          </p>
-          <ul class="space-y-2">
-            <li class="flex items-start gap-2"><span class="text-primary">✓</span> <span><strong>Efficiency Analysis:</strong> Identify bottlenecks in workflows</span></li>
-            <li class="flex items-start gap-2"><span class="text-primary">✓</span> <span><strong>Quality Tracking:</strong> Project quality trends and influencing factors</span></li>
-            <li class="flex items-start gap-2"><span class="text-primary">✓</span> <span><strong>Cost Accounting:</strong> Precise project cost and ROI calculation</span></li>
-            <li class="flex items-start gap-2"><span class="text-primary">✓</span> <span><strong>Team Profiling:</strong> Human and AI member collaboration performance analysis</span></li>
+          <ul>
+            <li><strong>{t('product.feature1.skill')}</strong></li>
+            <li><strong>{t('product.feature1.style')}</strong></li>
+            <li><strong>{t('product.feature1.history')}</strong></li>
+            <li><strong>{t('product.feature1.reputation')}</strong></li>
           </ul>
         </div>
       </div>
 
-      <!-- CTA -->
-      <div class="mt-16 text-center">
-        <div class="rounded-2xl bg-gradient-to-r from-purple-600 to-indigo-600 p-8 md:p-12 text-white">
-          <h2 class="text-3xl font-bold">Start Using Emgran</h2>
-          <p class="mt-4 text-white/80">Join the Design Partner Program and become an early adopter</p>
-          <a href="/contact" class="mt-6 inline-flex items-center justify-center rounded-lg bg-white px-8 py-3 text-sm font-medium text-purple-600 hover:bg-white/90 transition-colors">
-            Apply Now
-          </a>
+      <!-- Feature 2 -->
+      <div class="feature-detail">
+        <div class="feature-header">
+          <span class="feature-number">02</span>
+          <h2>{t('product.feature2.title')}</h2>
         </div>
+        <div class="feature-body">
+          <p>
+            {t('product.feature2.intro')}
+          </p>
+          <ul>
+            <li><strong>{t('product.feature2.split')}</strong></li>
+            <li><strong>{t('product.feature2.auto')}</strong></li>
+            <li><strong>{t('product.feature2.confirm')}</strong></li>
+            <li><strong>{t('product.feature2.dispute')}</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Feature 3 -->
+      <div class="feature-detail">
+        <div class="feature-header">
+          <span class="feature-number">03</span>
+          <h2>{t('product.feature3.title')}</h2>
+        </div>
+        <div class="feature-body">
+          <p>
+            {t('product.feature3.intro')}
+          </p>
+          <ul>
+            <li><strong>{t('product.feature3.realtime')}</strong></li>
+            <li><strong>{t('product.feature3.version')}</strong></li>
+            <li><strong>{t('product.feature3.comment')}</strong></li>
+            <li><strong>{t('product.feature3.assets')}</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Feature 4 -->
+      <div class="feature-detail">
+        <div class="feature-header">
+          <span class="feature-number">04</span>
+          <h2>{t('product.feature4.title')}</h2>
+        </div>
+        <div class="feature-body">
+          <p>
+            {t('product.feature4.intro')}
+          </p>
+          <ul>
+            <li><strong>{t('product.feature4.efficiency')}</strong></li>
+            <li><strong>{t('product.feature4.quality')}</strong></li>
+            <li><strong>{t('product.feature4.cost')}</strong></li>
+            <li><strong>{t('product.feature4.profile')}</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Pricing/CTA -->
+      <div class="cta-section">
+        <h2>{t('product.cta.title')}</h2>
+        <p>{t('product.cta.subtitle')}</p>
+        <a href="/contact" class="btn btn-primary">{t('product.cta.button')}</a>
       </div>
     </div>
   </section>
 </Layout>
+
+<style>
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .product-hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 6rem 2rem;
+    text-align: center;
+  }
+
+  .product-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.5rem;
+    opacity: 0.9;
+  }
+
+  .product-content {
+    padding: 4rem 0;
+  }
+
+  .feature-detail {
+    margin-bottom: 4rem;
+    padding: 2rem;
+    background: #f9fafb;
+    border-radius: 1rem;
+  }
+
+  .feature-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .feature-number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2563eb;
+  }
+
+  .feature-header h2 {
+    font-size: 2rem;
+    color: #1f2937;
+  }
+
+  .feature-body {
+    padding-left: 4rem;
+  }
+
+  .feature-body p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #4b5563;
+    margin-bottom: 1rem;
+  }
+
+  .feature-body ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .feature-body li {
+    margin-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #4b5563;
+    line-height: 1.6;
+  }
+
+  .feature-body li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #2563eb;
+    font-weight: bold;
+  }
+
+  .feature-body strong {
+    color: #1f2937;
+  }
+
+  .cta-section {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 1rem;
+    color: white;
+    margin-top: 3rem;
+  }
+
+  .cta-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .cta-section p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+  }
+
+  .btn {
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+    display: inline-block;
+  }
+
+  .btn-primary {
+    background: white;
+    color: #667eea;
+  }
+
+  .btn-primary:hover {
+    background: #f3f4f6;
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 768px) {
+    .product-hero h1 {
+      font-size: 2.5rem;
+    }
+
+    .feature-body {
+      padding-left: 0;
+    }
+
+    .feature-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>
