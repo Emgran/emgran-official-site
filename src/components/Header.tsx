@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { Menu, X } from 'lucide-react';
-import { languages, useTranslations, getLocalizedPath, defaultLang } from '@/i18n';
+import { useTranslations, getLocalizedPath, defaultLang } from '@/i18n';
 
 interface HeaderProps {
   lang?: string;
