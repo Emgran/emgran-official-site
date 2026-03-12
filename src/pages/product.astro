@@ -1,152 +1,94 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { useTranslations } from '../i18n';
-
-const lang = 'en';
-const t = (key: string) => useTranslations(lang)(key as any);
 ---
 
-<Layout title="Product - Emgran" lang={lang}>
-  <!-- Hero Section -->
-  <section class="bg-gradient-to-br from-indigo-600 to-purple-700 text-white py-20 px-4 text-center">
-    <div class="max-w-4xl mx-auto">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4">{t('product.title')}</h1>
-      <p class="text-xl md:text-2xl opacity-90">{t('product.subtitle')}</p>
-    </div>
-  </section>
+<Layout title="Product - Emgran" lang="en">
+  <section class="relative overflow-hidden">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-24">
+      <div class="text-center mb-16">
+        <h1 class="text-4xl md:text-5xl font-bold">Product</h1>
+        <p class="mt-4 text-xl text-muted-foreground">AI-Powered Design Collaboration Platform</p>
+      </div>
 
-  <!-- Features Section -->
-  <section class="py-16 px-4">
-    <div class="max-w-4xl mx-auto space-y-12">
-      
-      <!-- Feature 1: Milestone Settlement -->
-      <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8">
-        <div class="flex items-center gap-4 mb-6">
-          <span class="text-3xl font-bold text-indigo-600">01</span>
-          <h2 class="text-2xl font-bold text-gray-800 dark:text-white">{t('product.feature1.title')}</h2>
-        </div>
-        <div class="md:pl-16">
-          <p class="text-gray-600 dark:text-gray-300 mb-4">{t('product.feature1.intro')}</p>
+      <div class="space-y-12 max-w-4xl mx-auto">
+        <!-- Feature 1 -->
+        <div class="rounded-xl border border-border bg-card p-8">
+          <div class="flex items-center gap-4 mb-4">
+            <span class="text-3xl font-bold text-primary">01</span>
+            <h2 class="text-2xl font-bold">Agent Identity System</h2>
+          </div>
+          <p class="text-muted-foreground mb-4">
+            On Emgran, each AI assistant has a unique identity. This is more than just a name:
+          </p>
           <ul class="space-y-2">
-            <li class="flex items-start gap-2 text-gray-600 dark:text-gray-300">
-              <i class="fas fa-check text-indigo-600 mt-1"></i>
-              <strong>{t('product.feature1.split')}</strong>
-            </li>
-            <li class="flex items-start gap-2 text-gray-600 dark:text-gray-300">
-              <i class="fas fa-check text-indigo-600 mt-1"></i>
-              <strong>{t('product.feature1.auto')}</strong>
-            </li>
-            <li class="flex items-start gap-2 text-gray-600 dark:text-gray-300">
-              <i class="fas fa-check text-indigo-600 mt-1"></i>
-              <strong>{t('product.feature1.confirm')}</strong>
-            </li>
-            <li class="flex items-start gap-2 text-gray-600 dark:text-gray-300">
-              <i class="fas fa-check text-indigo-600 mt-1"></i>
-              <strong>{t('product.feature1.dispute')}</strong>
-            </li>
+            <li class="flex items-start gap-2"><span class="text-primary">✓</span> <span><strong>Professional Skills:</strong> Each Agent has clear expertise and work types they excel at</span></li>
+            <li class="flex items-start gap-2"><span class="text-primary">✓</span> <span><strong>Work Style:</strong> From creative brainstorming to rigorous execution, different styles suit different scenarios</span></li>
+            <li class="flex items-start gap-2"><span class="text-primary">✓</span> <span><strong>Collaboration History:</strong> Transparent cooperation records help human designers choose the right partners</span></li>
+            <li class="flex items-start gap-2"><span class="text-primary">✓</span> <span><strong>Reputation System:</strong> Quality ratings and reviews based on project completion</span></li>
+          </ul>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="rounded-xl border border-border bg-card p-8">
+          <div class="flex items-center gap-4 mb-4">
+            <span class="text-3xl font-bold text-primary">02</span>
+            <h2 class="text-2xl font-bold">Milestone Settlement Mechanism</h2>
+          </div>
+          <p class="text-muted-foreground mb-4">
+            We introduced a smart contract-based milestone settlement system to ensure fair and transparent value distribution:
+          </p>
+          <ul class="space-y-2">
+            <li class="flex items-start gap-2"><span class="text-primary">✓</span> <span><strong>Project Breakdown:</strong> Split large projects into quantifiable small milestones</span></li>
+            <li class="flex items-start gap-2"><span class="text-primary">✓</span> <span><strong>Auto Settlement:</strong> Automatic settlement triggered upon milestone completion</span></li>
+            <li class="flex items-start gap-2"><span class="text-primary">✓</span> <span><strong>Multi-party Confirmation:</strong> Key nodes require stakeholder confirmation for quality assurance</span></li>
+            <li class="flex items-start gap-2"><span class="text-primary">✓</span> <span><strong>Dispute Resolution:</strong> Built-in arbitration mechanism for fair resolution</span></li>
+          </ul>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="rounded-xl border border-border bg-card p-8">
+          <div class="flex items-center gap-4 mb-4">
+            <span class="text-3xl font-bold text-primary">03</span>
+            <h2 class="text-2xl font-bold">Design Collaboration Tools</h2>
+          </div>
+          <p class="text-muted-foreground mb-4">
+            Real-time tools built for human designers and AI Agent collaboration:
+          </p>
+          <ul class="space-y-2">
+            <li class="flex items-start gap-2"><span class="text-primary">✓</span> <span><strong>Real-time Collaboration:</strong> Multi-person, multi-Agent simultaneous online collaboration</span></li>
+            <li class="flex items-start gap-2"><span class="text-primary">✓</span> <span><strong>Version Control:</strong> Complete design history and version rollback</span></li>
+            <li class="flex items-start gap-2"><span class="text-primary">✓</span> <span><strong>Comments & Annotations:</strong> Precise feedback and discussion system</span></li>
+            <li class="flex items-start gap-2"><span class="text-primary">✓</span> <span><strong>Asset Library:</strong> Shared design resources and templates</span></li>
+          </ul>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="rounded-xl border border-border bg-card p-8">
+          <div class="flex items-center gap-4 mb-4">
+            <span class="text-3xl font-bold text-primary">04</span>
+            <h2 class="text-2xl font-bold">Data Insights</h2>
+          </div>
+          <p class="text-muted-foreground mb-4">
+            Deep data analysis helps teams continuously optimize:
+          </p>
+          <ul class="space-y-2">
+            <li class="flex items-start gap-2"><span class="text-primary">✓</span> <span><strong>Efficiency Analysis:</strong> Identify bottlenecks in workflows</span></li>
+            <li class="flex items-start gap-2"><span class="text-primary">✓</span> <span><strong>Quality Tracking:</strong> Project quality trends and influencing factors</span></li>
+            <li class="flex items-start gap-2"><span class="text-primary">✓</span> <span><strong>Cost Accounting:</strong> Precise project cost and ROI calculation</span></li>
+            <li class="flex items-start gap-2"><span class="text-primary">✓</span> <span><strong>Team Profiling:</strong> Human and AI member collaboration performance analysis</span></li>
           </ul>
         </div>
       </div>
 
-      <!-- Feature 2: Agent Identity -->
-      <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8">
-        <div class="flex items-center gap-4 mb-6">
-          <span class="text-3xl font-bold text-indigo-600">02</span>
-          <h2 class="text-2xl font-bold text-gray-800 dark:text-white">{t('product.feature2.title')}</h2>
+      <!-- CTA -->
+      <div class="mt-16 text-center">
+        <div class="rounded-2xl bg-gradient-to-r from-purple-600 to-indigo-600 p-8 md:p-12 text-white">
+          <h2 class="text-3xl font-bold">Start Using Emgran</h2>
+          <p class="mt-4 text-white/80">Join the Design Partner Program and become an early adopter</p>
+          <a href="/contact" class="mt-6 inline-flex items-center justify-center rounded-lg bg-white px-8 py-3 text-sm font-medium text-purple-600 hover:bg-white/90 transition-colors">
+            Apply Now
+          </a>
         </div>
-        <div class="md:pl-16">
-          <p class="text-gray-600 dark:text-gray-300 mb-4">{t('product.feature2.intro')}</p>
-          <ul class="space-y-2">
-            <li class="flex items-start gap-2 text-gray-600 dark:text-gray-300">
-              <i class="fas fa-check text-indigo-600 mt-1"></i>
-              <strong>{t('product.feature2.skill')}</strong>
-            </li>
-            <li class="flex items-start gap-2 text-gray-600 dark:text-gray-300">
-              <i class="fas fa-check text-indigo-600 mt-1"></i>
-              <strong>{t('product.feature2.style')}</strong>
-            </li>
-            <li class="flex items-start gap-2 text-gray-600 dark:text-gray-300">
-              <i class="fas fa-check text-indigo-600 mt-1"></i>
-              <strong>{t('product.feature2.history')}</strong>
-            </li>
-            <li class="flex items-start gap-2 text-gray-600 dark:text-gray-300">
-              <i class="fas fa-check text-indigo-600 mt-1"></i>
-              <strong>{t('product.feature2.reputation')}</strong>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Feature 3: Portable Reputation -->
-      <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8">
-        <div class="flex items-center gap-4 mb-6">
-          <span class="text-3xl font-bold text-indigo-600">03</span>
-          <h2 class="text-2xl font-bold text-gray-800 dark:text-white">{t('product.feature3.title')}</h2>
-        </div>
-        <div class="md:pl-16">
-          <p class="text-gray-600 dark:text-gray-300 mb-4">{t('product.feature3.intro')}</p>
-          <ul class="space-y-2">
-            <li class="flex items-start gap-2 text-gray-600 dark:text-gray-300">
-              <i class="fas fa-check text-indigo-600 mt-1"></i>
-              <strong>{t('product.feature3.accumulate')}</strong>
-            </li>
-            <li class="flex items-start gap-2 text-gray-600 dark:text-gray-300">
-              <i class="fas fa-check text-indigo-600 mt-1"></i>
-              <strong>{t('product.feature3.transfer')}</strong>
-            </li>
-            <li class="flex items-start gap-2 text-gray-600 dark:text-gray-300">
-              <i class="fas fa-check text-indigo-600 mt-1"></i>
-              <strong>{t('product.feature3.verify')}</strong>
-            </li>
-            <li class="flex items-start gap-2 text-gray-600 dark:text-gray-300">
-              <i class="fas fa-check text-indigo-600 mt-1"></i>
-              <strong>{t('product.feature3.trust')}</strong>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Feature 4: Secure Orders -->
-      <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8">
-        <div class="flex items-center gap-4 mb-6">
-          <span class="text-3xl font-bold text-indigo-600">04</span>
-          <h2 class="text-2xl font-bold text-gray-800 dark:text-white">{t('product.feature4.title')}</h2>
-        </div>
-        <div class="md:pl-16">
-          <p class="text-gray-600 dark:text-gray-300 mb-4">{t('product.feature4.intro')}</p>
-          <ul class="space-y-2">
-            <li class="flex items-start gap-2 text-gray-600 dark:text-gray-300">
-              <i class="fas fa-check text-indigo-600 mt-1"></i>
-              <strong>{t('product.feature4.escrow')}</strong>
-            </li>
-            <li class="flex items-start gap-2 text-gray-600 dark:text-gray-300">
-              <i class="fas fa-check text-indigo-600 mt-1"></i>
-              <strong>{t('product.feature4.verify')}</strong>
-            </li>
-            <li class="flex items-start gap-2 text-gray-600 dark:text-gray-300">
-              <i class="fas fa-check text-indigo-600 mt-1"></i>
-              <strong>{t('product.feature4.contract')}</strong>
-            </li>
-            <li class="flex items-start gap-2 text-gray-600 dark:text-gray-300">
-              <i class="fas fa-check text-indigo-600 mt-1"></i>
-              <strong>{t('product.feature4.support')}</strong>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- CTA Section -->
-  <section class="py-16 px-4">
-    <div class="max-w-4xl mx-auto">
-      <div class="bg-gradient-to-br from-indigo-600 to-purple-700 text-white text-center rounded-2xl p-12">
-        <h2 class="text-3xl font-bold mb-4">{t('product.cta.title')}</h2>
-        <p class="text-xl mb-8 opacity-90">{t('product.cta.subtitle')}</p>
-        <a href="/contact" class="inline-block bg-white text-indigo-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-          {t('product.cta.button')}
-        </a>
       </div>
     </div>
   </section>

@@ -1,9 +1,8 @@
-import { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState } from 'react';
 import { cn } from '@/lib/utils';
-import { Menu, X, Sun, Moon } from 'lucide-react';
-import { useTranslations, getLocalizedPath, defaultLang } from '@/i18n';
-import { LanguageSwitcher } from './LanguageSwitcher';
+import { Menu, X, Globe } from 'lucide-react';
+import { languages, useTranslations, getLocalizedPath, defaultLang } from '@/i18n';
+import { ThemeToggle } from './ThemeToggle';
 
 interface HeaderProps {
   lang?: string;
@@ -11,39 +10,9 @@ interface HeaderProps {
 
 export function Header({ lang = defaultLang }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [theme, setTheme] = useState<'light' | 'dark'>('light');
-  const [isScrolled, setIsScrolled] = useState(false);
-  const headerRef = useRef<HTMLElement>(null);
+  const [isLangOpen, setIsLangOpen] = useState(false);
   
   const t = (key: string) => useTranslations(lang as any)(key as any);
-
-  useEffect(() => {
-    const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null;
-    if (savedTheme) {
-      setTheme(savedTheme);
-      document.documentElement.classList.toggle('dark', savedTheme === 'dark');
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setTheme('dark');
-      document.documentElement.classList.add('dark');
-    }
-  }, []);
-
-  // Scroll effect
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const toggleTheme = () => {
-    const newTheme = theme === 'light' ? 'dark' : 'light';
-    setTheme(newTheme);
-    localStorage.setItem('theme', newTheme);
-    document.documentElement.classList.toggle('dark', newTheme === 'dark');
-  };
 
   const navItems = [
     { label: t('nav.home'), href: lang === defaultLang ? '/' : `/${lang}` },
@@ -53,168 +22,113 @@ export function Header({ lang = defaultLang }: HeaderProps) {
     { label: t('nav.contact'), href: getLocalizedPath('/contact', lang) },
   ];
 
+  const switchLanguage = (newLang: string) => {
+    const currentPath = window.location.pathname;
+    let newPath = currentPath;
+    
+    if (lang !== defaultLang) {
+      newPath = currentPath.replace(`/${lang}`, '') || '/';
+    }
+    
+    if (newLang !== defaultLang) {
+      newPath = `/${newLang}${newPath === '/' ? '' : newPath}`;
+    }
+    
+    window.location.href = newPath;
+  };
+
   return (
-    <motion.header
-      ref={headerRef}
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ type: 'spring', stiffness: 100, damping: 20 }}
-      className={cn(
-        'fixed top-0 z-50 w-full transition-all duration-300',
-        isScrolled 
-          ? 'header-solid' 
-          : 'header-transparent'
-      )}
-    >
-      <div className="container flex h-16 items-center justify-between">
-        {/* Logo */}
-        <motion.a 
-          href={lang === defaultLang ? '/' : `/${lang}`} 
-          className="flex items-center space-x-2"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          <span className="text-2xl font-bold gradient-text-animated">Emgran</span>
-        </motion.a>
+    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex h-16 items-center justify-between">
+        <a href={lang === defaultLang ? '/' : `/${lang}`} className="flex items-center space-x-2">
+          <span className="text-2xl font-bold gradient-text">Emgran</span>
+        </a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-1">
-          {navItems.map((item, index) => (
-            <motion.a
+        <nav className="hidden md:flex items-center space-x-6">
+          {navItems.map((item) => (
+            <a
               key={item.href}
               href={item.href}
-              className="relative px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-              whileHover={{ y: -2 }}
+              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
               {item.label}
-              <motion.span
-                className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full"
-                whileHover={{ width: '80%' }}
-                transition={{ duration: 0.2 }}
-              />
-            </motion.a>
+            </a>
           ))}
         </nav>
 
         <div className="flex items-center space-x-4">
           {/* Language Switcher */}
-          <LanguageSwitcher lang={lang} />
+          <div className="relative">
+            <button
+              onClick={() => setIsLangOpen(!isLangOpen)}
+              className="flex items-center space-x-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <Globe className="h-4 w-4" />
+              <span className="hidden sm:inline">{languages[lang as keyof typeof languages]}</span>
+            </button>
+            
+            {isLangOpen && (
+              <div className="absolute right-0 mt-2 w-32 rounded-md bg-popover border border-border shadow-lg">
+                {Object.entries(languages).map(([code, name]) => (
+                  <button
+                    key={code}
+                    onClick={() => switchLanguage(code)}
+                    className={cn(
+                      "block w-full px-4 py-2 text-left text-sm hover:bg-accent transition-colors",
+                      code === lang && "bg-accent"
+                    )}
+                  >
+                    {name}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
 
           {/* Theme Toggle */}
-          <motion.button
-            onClick={toggleTheme}
-            className="rounded-full p-2 text-muted-foreground hover:text-foreground hover:bg-accent/50 transition-all"
-            whileHover={{ scale: 1.1, rotate: 15 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            <AnimatePresence mode="wait">
-              {theme === 'light' ? (
-                <motion.div
-                  key="moon"
-                  initial={{ rotate: -90, opacity: 0 }}
-                  animate={{ rotate: 0, opacity: 1 }}
-                  exit={{ rotate: 90, opacity: 0 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <Moon className="h-5 w-5" />
-                </motion.div>
-              ) : (
-                <motion.div
-                  key="sun"
-                  initial={{ rotate: 90, opacity: 0 }}
-                  animate={{ rotate: 0, opacity: 1 }}
-                  exit={{ rotate: -90, opacity: 0 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <Sun className="h-5 w-5" />
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </motion.button>
+          <ThemeToggle />
 
           {/* CTA Button */}
-          <motion.a
+          <a
             href={getLocalizedPath('/contact', lang)}
-            className="hidden sm:inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-purple-600 to-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-lg hover:shadow-xl transition-all"
-            whileHover={{ scale: 1.05, y: -2 }}
-            whileTap={{ scale: 0.95 }}
+            className="hidden sm:inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
           >
             {t('hero.cta.primary')}
-          </motion.a>
+          </a>
 
           {/* Mobile Menu Toggle */}
-          <motion.button
+          <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden rounded-full p-2 text-muted-foreground hover:text-foreground hover:bg-accent/50 transition-all"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
+            className="md:hidden rounded-md p-2 text-muted-foreground hover:text-foreground transition-colors"
           >
-            <AnimatePresence mode="wait">
-              {isMenuOpen ? (
-                <motion.div
-                  key="close"
-                  initial={{ rotate: -90, opacity: 0 }}
-                  animate={{ rotate: 0, opacity: 1 }}
-                  exit={{ rotate: 90, opacity: 0 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <X className="h-5 w-5" />
-                </motion.div>
-              ) : (
-                <motion.div
-                  key="menu"
-                  initial={{ rotate: 90, opacity: 0 }}
-                  animate={{ rotate: 0, opacity: 1 }}
-                  exit={{ rotate: -90, opacity: 0 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <Menu className="h-5 w-5" />
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </motion.button>
+            {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
         </div>
       </div>
 
       {/* Mobile Navigation */}
-      <AnimatePresence>
-        {isMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="md:hidden border-t border-border/50 bg-background/95 backdrop-blur-lg"
-          >
-            <nav className="container py-4 space-y-1">
-              {navItems.map((item, index) => (
-                <motion.a
-                  key={item.href}
-                  href={item.href}
-                  className="block py-3 px-4 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-accent/50 rounded-lg transition-colors"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.05 }}
-                >
-                  {item.label}
-                </motion.a>
-              ))}
-              <motion.a
-                href={getLocalizedPath('/contact', lang)}
-                className="block py-3 px-4 text-sm font-medium text-white bg-gradient-to-r from-purple-600 to-indigo-600 rounded-lg text-center mt-4"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: navItems.length * 0.05 }}
+      {isMenuOpen && (
+        <div className="md:hidden border-t border-border">
+          <nav className="container mx-auto px-4 sm:px-6 lg:px-8 py-4 space-y-2">
+            {navItems.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                className="block py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
               >
-                {t('hero.cta.primary')}
-              </motion.a>
-            </nav>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.header>
+                {item.label}
+              </a>
+            ))}
+            <a
+              href={getLocalizedPath('/contact', lang)}
+              className="block py-2 text-sm font-medium text-primary"
+            >
+              {t('hero.cta.primary')}
+            </a>
+          </nav>
+        </div>
+      )}
+    </header>
   );
 }

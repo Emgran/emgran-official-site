@@ -42,7 +42,7 @@ const faqs = [
 export function FAQ() {
   return (
     <section id="faq" className="py-20 md:py-32">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center space-y-4 mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
