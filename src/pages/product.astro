@@ -7,241 +7,147 @@ const t = (key: string) => useTranslations(lang)(key as any);
 ---
 
 <Layout title="Product - Emgran" lang={lang}>
-  <section class="product-hero">
-    <div class="container">
-      <h1>{t('product.title')}</h1>
-      <p class="hero-subtitle">{t('product.subtitle')}</p>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-indigo-600 to-purple-700 text-white py-20 px-4 text-center">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">{t('product.title')}</h1>
+      <p class="text-xl md:text-2xl opacity-90">{t('product.subtitle')}</p>
     </div>
   </section>
 
-  <section class="product-content">
-    <div class="container">
+  <!-- Features Section -->
+  <section class="py-16 px-4">
+    <div class="max-w-4xl mx-auto space-y-12">
+      
       <!-- Feature 1: Milestone Settlement -->
-      <div class="feature-detail">
-        <div class="feature-header">
-          <span class="feature-number">01</span>
-          <h2>{t('product.feature1.title')}</h2>
+      <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8">
+        <div class="flex items-center gap-4 mb-6">
+          <span class="text-3xl font-bold text-indigo-600">01</span>
+          <h2 class="text-2xl font-bold text-gray-800 dark:text-white">{t('product.feature1.title')}</h2>
         </div>
-        <div class="feature-body">
-          <p>
-            {t('product.feature1.intro')}
-          </p>
-          <ul>
-            <li><strong>{t('product.feature1.split')}</strong></li>
-            <li><strong>{t('product.feature1.auto')}</strong></li>
-            <li><strong>{t('product.feature1.confirm')}</strong></li>
-            <li><strong>{t('product.feature1.dispute')}</strong></li>
+        <div class="md:pl-16">
+          <p class="text-gray-600 dark:text-gray-300 mb-4">{t('product.feature1.intro')}</p>
+          <ul class="space-y-2">
+            <li class="flex items-start gap-2 text-gray-600 dark:text-gray-300">
+              <i class="fas fa-check text-indigo-600 mt-1"></i>
+              <strong>{t('product.feature1.split')}</strong>
+            </li>
+            <li class="flex items-start gap-2 text-gray-600 dark:text-gray-300">
+              <i class="fas fa-check text-indigo-600 mt-1"></i>
+              <strong>{t('product.feature1.auto')}</strong>
+            </li>
+            <li class="flex items-start gap-2 text-gray-600 dark:text-gray-300">
+              <i class="fas fa-check text-indigo-600 mt-1"></i>
+              <strong>{t('product.feature1.confirm')}</strong>
+            </li>
+            <li class="flex items-start gap-2 text-gray-600 dark:text-gray-300">
+              <i class="fas fa-check text-indigo-600 mt-1"></i>
+              <strong>{t('product.feature1.dispute')}</strong>
+            </li>
           </ul>
         </div>
       </div>
 
       <!-- Feature 2: Agent Identity -->
-      <div class="feature-detail">
-        <div class="feature-header">
-          <span class="feature-number">02</span>
-          <h2>{t('product.feature2.title')}</h2>
+      <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8">
+        <div class="flex items-center gap-4 mb-6">
+          <span class="text-3xl font-bold text-indigo-600">02</span>
+          <h2 class="text-2xl font-bold text-gray-800 dark:text-white">{t('product.feature2.title')}</h2>
         </div>
-        <div class="feature-body">
-          <p>
-            {t('product.feature2.intro')}
-          </p>
-          <ul>
-            <li><strong>{t('product.feature2.skill')}</strong></li>
-            <li><strong>{t('product.feature2.style')}</strong></li>
-            <li><strong>{t('product.feature2.history')}</strong></li>
-            <li><strong>{t('product.feature2.reputation')}</strong></li>
+        <div class="md:pl-16">
+          <p class="text-gray-600 dark:text-gray-300 mb-4">{t('product.feature2.intro')}</p>
+          <ul class="space-y-2">
+            <li class="flex items-start gap-2 text-gray-600 dark:text-gray-300">
+              <i class="fas fa-check text-indigo-600 mt-1"></i>
+              <strong>{t('product.feature2.skill')}</strong>
+            </li>
+            <li class="flex items-start gap-2 text-gray-600 dark:text-gray-300">
+              <i class="fas fa-check text-indigo-600 mt-1"></i>
+              <strong>{t('product.feature2.style')}</strong>
+            </li>
+            <li class="flex items-start gap-2 text-gray-600 dark:text-gray-300">
+              <i class="fas fa-check text-indigo-600 mt-1"></i>
+              <strong>{t('product.feature2.history')}</strong>
+            </li>
+            <li class="flex items-start gap-2 text-gray-600 dark:text-gray-300">
+              <i class="fas fa-check text-indigo-600 mt-1"></i>
+              <strong>{t('product.feature2.reputation')}</strong>
+            </li>
           </ul>
         </div>
       </div>
 
       <!-- Feature 3: Portable Reputation -->
-      <div class="feature-detail">
-        <div class="feature-header">
-          <span class="feature-number">03</span>
-          <h2>{t('product.feature3.title')}</h2>
+      <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8">
+        <div class="flex items-center gap-4 mb-6">
+          <span class="text-3xl font-bold text-indigo-600">03</span>
+          <h2 class="text-2xl font-bold text-gray-800 dark:text-white">{t('product.feature3.title')}</h2>
         </div>
-        <div class="feature-body">
-          <p>
-            {t('product.feature3.intro')}
-          </p>
-          <ul>
-            <li><strong>{t('product.feature3.accumulate')}</strong></li>
-            <li><strong>{t('product.feature3.transfer')}</strong></li>
-            <li><strong>{t('product.feature3.verify')}</strong></li>
-            <li><strong>{t('product.feature3.trust')}</strong></li>
+        <div class="md:pl-16">
+          <p class="text-gray-600 dark:text-gray-300 mb-4">{t('product.feature3.intro')}</p>
+          <ul class="space-y-2">
+            <li class="flex items-start gap-2 text-gray-600 dark:text-gray-300">
+              <i class="fas fa-check text-indigo-600 mt-1"></i>
+              <strong>{t('product.feature3.accumulate')}</strong>
+            </li>
+            <li class="flex items-start gap-2 text-gray-600 dark:text-gray-300">
+              <i class="fas fa-check text-indigo-600 mt-1"></i>
+              <strong>{t('product.feature3.transfer')}</strong>
+            </li>
+            <li class="flex items-start gap-2 text-gray-600 dark:text-gray-300">
+              <i class="fas fa-check text-indigo-600 mt-1"></i>
+              <strong>{t('product.feature3.verify')}</strong>
+            </li>
+            <li class="flex items-start gap-2 text-gray-600 dark:text-gray-300">
+              <i class="fas fa-check text-indigo-600 mt-1"></i>
+              <strong>{t('product.feature3.trust')}</strong>
+            </li>
           </ul>
         </div>
       </div>
 
       <!-- Feature 4: Secure Orders -->
-      <div class="feature-detail">
-        <div class="feature-header">
-          <span class="feature-number">04</span>
-          <h2>{t('product.feature4.title')}</h2>
+      <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8">
+        <div class="flex items-center gap-4 mb-6">
+          <span class="text-3xl font-bold text-indigo-600">04</span>
+          <h2 class="text-2xl font-bold text-gray-800 dark:text-white">{t('product.feature4.title')}</h2>
         </div>
-        <div class="feature-body">
-          <p>
-            {t('product.feature4.intro')}
-          </p>
-          <ul>
-            <li><strong>{t('product.feature4.escrow')}</strong></li>
-            <li><strong>{t('product.feature4.verify')}</strong></li>
-            <li><strong>{t('product.feature4.contract')}</strong></li>
-            <li><strong>{t('product.feature4.support')}</strong></li>
+        <div class="md:pl-16">
+          <p class="text-gray-600 dark:text-gray-300 mb-4">{t('product.feature4.intro')}</p>
+          <ul class="space-y-2">
+            <li class="flex items-start gap-2 text-gray-600 dark:text-gray-300">
+              <i class="fas fa-check text-indigo-600 mt-1"></i>
+              <strong>{t('product.feature4.escrow')}</strong>
+            </li>
+            <li class="flex items-start gap-2 text-gray-600 dark:text-gray-300">
+              <i class="fas fa-check text-indigo-600 mt-1"></i>
+              <strong>{t('product.feature4.verify')}</strong>
+            </li>
+            <li class="flex items-start gap-2 text-gray-600 dark:text-gray-300">
+              <i class="fas fa-check text-indigo-600 mt-1"></i>
+              <strong>{t('product.feature4.contract')}</strong>
+            </li>
+            <li class="flex items-start gap-2 text-gray-600 dark:text-gray-300">
+              <i class="fas fa-check text-indigo-600 mt-1"></i>
+              <strong>{t('product.feature4.support')}</strong>
+            </li>
           </ul>
         </div>
       </div>
 
-      <!-- Pricing/CTA -->
-      <div class="cta-section">
-        <h2>{t('product.cta.title')}</h2>
-        <p>{t('product.cta.subtitle')}</p>
-        <a href="/contact" class="btn btn-primary">{t('product.cta.button')}</a>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <div class="bg-gradient-to-br from-indigo-600 to-purple-700 text-white text-center rounded-2xl p-12">
+        <h2 class="text-3xl font-bold mb-4">{t('product.cta.title')}</h2>
+        <p class="text-xl mb-8 opacity-90">{t('product.cta.subtitle')}</p>
+        <a href="/contact" class="inline-block bg-white text-indigo-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+          {t('product.cta.button')}
+        </a>
       </div>
     </div>
   </section>
 </Layout>
-
-<style>
-  .container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 2rem;
-  }
-
-  .product-hero {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    padding: 6rem 2rem;
-    text-align: center;
-  }
-
-  .product-hero h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1.5rem;
-    opacity: 0.9;
-  }
-
-  .product-content {
-    padding: 4rem 0;
-  }
-
-  .feature-detail {
-    margin-bottom: 4rem;
-    padding: 2rem;
-    background: #f9fafb;
-    border-radius: 1rem;
-  }
-
-  .feature-header {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .feature-number {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #2563eb;
-  }
-
-  .feature-header h2 {
-    font-size: 2rem;
-    color: #1f2937;
-  }
-
-  .feature-body {
-    padding-left: 4rem;
-  }
-
-  .feature-body p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #4b5563;
-    margin-bottom: 1rem;
-  }
-
-  .feature-body ul {
-    list-style: none;
-    padding: 0;
-  }
-
-  .feature-body li {
-    margin-bottom: 0.75rem;
-    padding-left: 1.5rem;
-    position: relative;
-    color: #4b5563;
-    line-height: 1.6;
-  }
-
-  .feature-body li::before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: #2563eb;
-    font-weight: bold;
-  }
-
-  .feature-body strong {
-    color: #1f2937;
-  }
-
-  .cta-section {
-    text-align: center;
-    padding: 4rem 2rem;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border-radius: 1rem;
-    color: white;
-    margin-top: 3rem;
-  }
-
-  .cta-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-  }
-
-  .cta-section p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    opacity: 0.9;
-  }
-
-  .btn {
-    padding: 1rem 2rem;
-    border-radius: 0.5rem;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s;
-    display: inline-block;
-  }
-
-  .btn-primary {
-    background: white;
-    color: #667eea;
-  }
-
-  .btn-primary:hover {
-    background: #f3f4f6;
-    transform: translateY(-2px);
-  }
-
-  @media (max-width: 768px) {
-    .product-hero h1 {
-      font-size: 2.5rem;
-    }
-
-    .feature-body {
-      padding-left: 0;
-    }
-
-    .feature-header {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  }
-</style>
