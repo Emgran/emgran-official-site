@@ -30,7 +30,7 @@ import Layout from '../../layouts/Layout.astro';
   <section class="py-16 px-4 bg-gray-50">
     <div class="max-w-4xl mx-auto">
       <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-8 text-center">
-        🎯 Emgran 的定位
+        Emgran 的定位
       </h2>
       
       <div class="bg-white p-8 rounded-2xl shadow-lg mb-8">
@@ -61,13 +61,13 @@ import Layout from '../../layouts/Layout.astro';
   <section class="py-16 px-4 bg-white">
     <div class="max-w-4xl mx-auto">
       <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-8 text-center">
-        ❌ 解决的痛点
+        解决的痛点
       </h2>
       
       <div class="space-y-6">
         <div class="flex gap-4 items-start">
-          <div class="flex-shrink-0 w-12 h-12 bg-red-100 rounded-full flex items-center justify-center text-2xl">
-            💸
+          <div class="flex-shrink-0 w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
+            <i class="fas fa-dollar-sign text-red-500 text-xl"></i>
           </div>
           <div>
             <h3 class="text-xl font-bold text-gray-800 mb-2">价值分配不透明</h3>
@@ -78,8 +78,8 @@ import Layout from '../../layouts/Layout.astro';
         </div>
         
         <div class="flex gap-4 items-start">
-          <div class="flex-shrink-0 w-12 h-12 bg-red-100 rounded-full flex items-center justify-center text-2xl">
-            🔒
+          <div class="flex-shrink-0 w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
+            <i class="fas fa-lock text-red-500 text-xl"></i>
           </div>
           <div>
             <h3 class="text-xl font-bold text-gray-800 mb-2">身份管理混乱</h3>
@@ -90,8 +90,8 @@ import Layout from '../../layouts/Layout.astro';
         </div>
         
         <div class="flex gap-4 items-start">
-          <div class="flex-shrink-0 w-12 h-12 bg-red-100 rounded-full flex items-center justify-center text-2xl">
-            ⚖️
+          <div class="flex-shrink-0 w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
+            <i class="fas fa-scale-balanced text-red-500 text-xl"></i>
           </div>
           <div>
             <h3 class="text-xl font-bold text-gray-800 mb-2">信任机制缺失</h3>
@@ -102,8 +102,8 @@ import Layout from '../../layouts/Layout.astro';
         </div>
         
         <div class="flex gap-4 items-start">
-          <div class="flex-shrink-0 w-12 h-12 bg-red-100 rounded-full flex items-center justify-center text-2xl">
-            📉
+          <div class="flex-shrink-0 w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
+            <i class="fas fa-arrow-trend-down text-red-500 text-xl"></i>
           </div>
           <div>
             <h3 class="text-xl font-bold text-gray-800 mb-2">协作效率低下</h3>
@@ -120,12 +120,14 @@ import Layout from '../../layouts/Layout.astro';
   <section class="py-16 px-4 bg-gray-50">
     <div class="max-w-4xl mx-auto">
       <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-8 text-center">
-        ✨ 核心功能
+        核心功能
       </h2>
       
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
-          <div class="text-5xl mb-4">🤖</div>
+          <div class="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center mb-4">
+            <i class="fas fa-robot text-indigo-600 text-xl"></i>
+          </div>
           <h3 class="text-xl font-bold text-gray-800 mb-3">Agent 身份系统</h3>
           <p class="text-gray-600 leading-relaxed">
             为每个 AI Agent 创建唯一的数字身份，记录其技能标签、历史项目、信誉评分和协作偏好。支持身份验证和授权管理，确保只有合法的 Agent 能参与协作。
@@ -133,7 +135,9 @@ import Layout from '../../layouts/Layout.astro';
         </div>
         
         <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
-          <div class="text-5xl mb-4">📊</div>
+          <div class="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center mb-4">
+            <i class="fas fa-chart-bar text-indigo-600 text-xl"></i>
+          </div>
           <h3 class="text-xl font-bold text-gray-800 mb-3">里程碑结算</h3>
           <p class="text-gray-600 leading-relaxed">
             基于智能合约的自动化结算系统。项目被分解为可验证的里程碑，完成后自动触发价值分配。支持多种结算模式，包括固定报酬、绩效分成和股权激励。
@@ -141,7 +145,9 @@ import Layout from '../../layouts/Layout.astro';
         </div>
         
         <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
-          <div class="text-5xl mb-4">🔄</div>
+          <div class="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center mb-4">
+            <i class="fas fa-arrows-rotate text-indigo-600 text-xl"></i>
+          </div>
           <h3 class="text-xl font-bold text-gray-800 mb-3">协作工作流</h3>
           <p class="text-gray-600 leading-relaxed">
             可视化的工作流编排工具，支持条件分支、并行任务和自动重试。人类可以实时监控进度，AI Agent 可以自主协调依赖关系，实现高效的并行协作。
@@ -149,7 +155,9 @@ import Layout from '../../layouts/Layout.astro';
         </div>
         
         <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
-          <div class="text-5xl mb-4">📈</div>
+          <div class="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center mb-4">
+            <i class="fas fa-chart-line text-indigo-600 text-xl"></i>
+          </div>
           <h3 class="text-xl font-bold text-gray-800 mb-3">数据洞察</h3>
           <p class="text-gray-600 leading-relaxed">
             深度分析协作数据，提供效率报告、质量评估和成本分析。帮助团队识别瓶颈、优化流程，并为未来的项目规划提供数据支持。
@@ -157,7 +165,9 @@ import Layout from '../../layouts/Layout.astro';
         </div>
         
         <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
-          <div class="text-5xl mb-4">🔐</div>
+          <div class="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center mb-4">
+            <i class="fas fa-shield-halved text-indigo-600 text-xl"></i>
+          </div>
           <h3 class="text-xl font-bold text-gray-800 mb-3">权限与审计</h3>
           <p class="text-gray-600 leading-relaxed">
             细粒度的权限控制系统，确保每个参与者只能访问授权的资源。完整的审计日志记录所有操作，支持事后追溯和合规审查。
@@ -165,7 +175,9 @@ import Layout from '../../layouts/Layout.astro';
         </div>
         
         <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
-          <div class="text-5xl mb-4">🌐</div>
+          <div class="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center mb-4">
+            <i class="fas fa-globe text-indigo-600 text-xl"></i>
+          </div>
           <h3 class="text-xl font-bold text-gray-800 mb-3">开放生态</h3>
           <p class="text-gray-600 leading-relaxed">
             提供完善的 API 和 SDK，支持第三方 AI Agent 和工具集成。建立开放的协作市场，让优秀的 Agent 能够被更多人发现和使用。
@@ -179,7 +191,7 @@ import Layout from '../../layouts/Layout.astro';
   <section class="py-16 px-4 bg-white">
     <div class="max-w-4xl mx-auto">
       <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-8 text-center">
-        👥 目标用户
+        目标用户
       </h2>
       
       <div class="space-y-6">
@@ -274,7 +286,7 @@ import Layout from '../../layouts/Layout.astro';
   <section class="py-16 px-4 bg-gradient-to-br from-indigo-600 to-purple-700 text-white text-center">
     <div class="max-w-4xl mx-auto">
       <h2 class="text-3xl md:text-4xl font-bold mb-6">
-        🚀 我们的愿景
+        我们的愿景
       </h2>
       <p class="text-xl leading-relaxed mb-8 opacity-90">
         Emgran 相信，未来的工作将是人类与 AI 的深度协作。我们不是要取代人类，而是要<strong>放大人类的创造力</strong>。通过建立可信的结算层与身份层，我们让每一次协作都变得透明、公平、高效。

@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import '@fortawesome/fontawesome-free/css/all.css';
 import { languages, useTranslations, getLocalizedPath } from '../i18n';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
@@ -13,7 +14,7 @@ interface Props {
 
 const { 
   title, 
-  description = "Emgran - AI-Powered Design Collaboration Platform",
+  description = "Emgran - AI Collaboration Settlement Platform",
   lang = 'en'
 } = Astro.props;
 
