@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 import { useTranslations, getLocalizedPath, defaultLang } from '@/i18n';
+import { LanguageSwitcher } from './LanguageSwitcher';
 
 interface HeaderProps {
   lang?: string;
@@ -98,33 +99,9 @@ export function Header({ lang = defaultLang }: HeaderProps) {
           ))}
         </nav>
 
-        <div className="flex items-center space-x-3">
+        <div className="flex items-center space-x-4">
           {/* Language Switcher */}
-          <div className="language-switcher flex items-center space-x-1 text-sm">
-            <motion.a
-              href="/"
-              className={cn(
-                "px-2 py-1 rounded font-medium transition-colors",
-                lang === 'en' ? "text-foreground bg-accent/50" : "text-muted-foreground hover:text-foreground"
-              )}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              EN
-            </motion.a>
-            <span className="text-muted-foreground/50">|</span>
-            <motion.a
-              href="/zh/"
-              className={cn(
-                "px-2 py-1 rounded font-medium transition-colors",
-                lang === 'zh' ? "text-foreground bg-accent/50" : "text-muted-foreground hover:text-foreground"
-              )}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              中文
-            </motion.a>
-          </div>
+          <LanguageSwitcher lang={lang} />
 
           {/* Theme Toggle */}
           <motion.button
