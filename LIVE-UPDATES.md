@@ -1,5 +1,46 @@
 # Live Updates Log
 
+## 2026-03-12 15:43 GMT+8 - P2 问题修复
+
+### 修复内容
+
+#### BUG-005: 缺少 robots.txt ✅
+- **问题**: 搜索引擎爬虫缺少指引文件
+- **修复方案**: 创建 `public/robots.txt`
+- **修复提交**: `fe5fe67`
+- **文件内容**:
+  ```
+  User-agent: *
+  Allow: /
+
+  Sitemap: https://emgran.com/sitemap.xml
+  ```
+
+#### BUG-006: 缺少 sitemap.xml ✅
+- **问题**: 缺少搜索引擎索引文件
+- **修复方案**: 安装 `@astrojs/sitemap` 插件并配置
+- **修复提交**: `fe5fe67`
+- **受影响文件**:
+  - `astro.config.mjs` (添加 sitemap 集成)
+  - `package.json` (新增依赖)
+
+### 构建验证
+
+```
+✓ Completed in 2.28s.
+✓ 11 page(s) built in 2.66s
+[@astrojs/sitemap] `sitemap-index.xml` created at `dist`
+✓ Complete!
+```
+
+### 部署状态
+
+- **提交**: fe5fe67
+- **推送**: ✅ 已推送到 origin/main
+- **CI/CD**: 待触发
+
+---
+
 ## 2026-03-12 15:36 GMT+8 - P1 问题修复
 
 ### 修复内容
@@ -30,12 +71,16 @@
 - **推送**: ✅ 已推送到 origin/main
 - **CI/CD**: 待触发
 
-### 待修复项
+### 所有 QA 问题已修复 ✅
 
 | ID | 问题 | 优先级 | 状态 |
 |----|------|--------|------|
-| BUG-005 | 缺少 robots.txt | P2 | 待修复 |
-| BUG-006 | 缺少 sitemap.xml | P2 | 待修复 |
+| BUG-001 | 中文页面 500 错误 | P0 | ✅ 已修复 |
+| BUG-002 | 缺少 favicon | P0 | ✅ 已修复 |
+| BUG-003 | 缺少语言切换器 UI | P1 | ✅ 已修复 |
+| BUG-004 | Open Graph 标签 | P1 | ✅ 已修复 |
+| BUG-005 | 缺少 robots.txt | P2 | ✅ 已修复 |
+| BUG-006 | 缺少 sitemap.xml | P2 | ✅ 已修复 |
 
 ---
 
