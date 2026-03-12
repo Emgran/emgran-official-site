@@ -7,11 +7,15 @@ import { Testimonials } from '../../components/Testimonials';
 import { CTASection } from '../../components/CTASection';
 import { TrustBadges, StatsTicker } from '../../components/SocialProof';
 import { Pricing } from '../../components/Pricing';
+import { BetaBanner } from '../../components/BetaBanner';
 
 const lang = 'zh';
 ---
 
 <Layout title="Emgran - AI 协作结算平台" lang={lang}>
+  <!-- Beta Banner -->
+  <BetaBanner lang={lang} client:load />
+  
   <!-- Hero Section -->
   <Hero lang={lang} client:load />
   

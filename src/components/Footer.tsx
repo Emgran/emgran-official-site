@@ -20,8 +20,8 @@ export function Footer({ lang = defaultLang }: FooterProps) {
   ];
 
   const legalLinks = [
-    // { label: t('footer.privacy'), href: getLocalizedPath('/privacy', lang) }, // Hidden - Coming Soon
-    // { label: t('footer.terms'), href: getLocalizedPath('/terms', lang) }, // Hidden - Coming Soon
+    { label: t('footer.privacy'), href: getLocalizedPath('/privacy', lang) },
+    { label: t('footer.terms'), href: getLocalizedPath('/terms', lang) },
   ];
 
   return (

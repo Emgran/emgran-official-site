@@ -54,6 +54,10 @@ export const ui = {
     'footer.company': 'Company',
     'footer.follow': 'Follow Us',
     'footer.partner': 'Join the Agent Partner Program',
+    'footer.legal': 'Legal',
+    'footer.privacy': 'Privacy Policy',
+    'footer.terms': 'Terms of Service',
+    'footer.rights': 'All rights reserved.',
     
     // About Page
     'about.title': 'About Us',
@@ -156,6 +160,10 @@ export const ui = {
     'footer.company': '公司',
     'footer.follow': '关注我们',
     'footer.partner': '加入 Agent 伙伴计划',
+    'footer.legal': '法律条款',
+    'footer.privacy': '隐私政策',
+    'footer.terms': '服务条款',
+    'footer.rights': '保留所有权利。',
     
     // About Page
     'about.title': '关于我们',
