@@ -2,6 +2,7 @@
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import react from '@astrojs/react';
+import sitemap from '@astrojs/sitemap';
 import { fileURLToPath } from 'url';
 import path from 'path';
 
@@ -11,7 +12,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 export default defineConfig({
   output: 'static',
   site: 'https://emgran.com',
-  integrations: [react()],
+  integrations: [react(), sitemap()],
   i18n: {
     defaultLocale: 'en',
     locales: ['en', 'zh'],
