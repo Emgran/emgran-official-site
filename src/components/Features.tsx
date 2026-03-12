@@ -1,157 +1,159 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import {
-  Brain,
-  Zap,
+  Bot,
+  BarChart3,
   Shield,
-  Code,
-  Globe,
-  Sparkles,
+  Wallet,
+  Users,
+  LineChart,
   ArrowRight,
 } from "lucide-react";
+import { useTranslations, defaultLang } from '@/i18n';
 
-const features = [
-  {
-    icon: Brain,
-    title: "Advanced AI Models",
-    description:
-      "Access state-of-the-art language models and neural networks for your applications.",
-    gradient: "from-purple-500 to-pink-500",
-    delay: 0,
-  },
-  {
-    icon: Zap,
-    title: "Lightning Fast",
-    description:
-      "Optimized infrastructure ensures your AI queries are processed in milliseconds.",
-    gradient: "from-yellow-500 to-orange-500",
-    delay: 0.1,
-  },
-  {
-    icon: Shield,
-    title: "Enterprise Security",
-    description:
-      "Bank-level encryption and compliance with SOC 2, GDPR, and HIPAA standards.",
-    gradient: "from-green-500 to-emerald-500",
-    delay: 0.2,
-  },
-  {
-    icon: Code,
-    title: "Developer First",
-    description:
-      "Clean APIs, comprehensive docs, and SDKs in your favorite programming languages.",
-    gradient: "from-blue-500 to-cyan-500",
-    delay: 0.3,
-  },
-  {
-    icon: Globe,
-    title: "Global Scale",
-    description:
-      "Deploy worldwide with edge locations across 6 continents for minimal latency.",
-    gradient: "from-indigo-500 to-purple-500",
-    delay: 0.4,
-  },
-  {
-    icon: Sparkles,
-    title: "Auto-Optimization",
-    description:
-      "Smart caching and model selection automatically optimize for cost and performance.",
-    gradient: "from-pink-500 to-rose-500",
-    delay: 0.5,
-  },
-];
+interface FeaturesProps {
+  lang?: string;
+}
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.12,
-      delayChildren: 0.2,
-    },
-  },
-};
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 40, scale: 0.95 },
-  show: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: {
-      type: "spring",
-      stiffness: 100,
-      damping: 15,
-    },
-  },
-};
-
-const iconVariants = {
-  hidden: { scale: 0, rotate: -180 },
-  show: {
-    scale: 1,
-    rotate: 0,
-    transition: {
-      type: "spring",
-      stiffness: 200,
-      damping: 15,
-    },
-  },
-};
-
-export function Features() {
+export function Features({ lang = defaultLang }: FeaturesProps) {
+  const t = (key: string) => useTranslations(lang as any)(key as any);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
+  const features = [
+    {
+      icon: Bot,
+      title: lang === 'zh' ? 'AI 身份认证' : 'AI Identity Verification',
+      description: lang === 'zh' 
+        ? '基于区块链的去中心化身份系统，确保每个 AI 智能体的真实性和可信度'
+        : 'Blockchain-based decentralized identity system ensuring authenticity and trust for every AI agent',
+      gradient: 'from-purple-500 to-pink-500',
+      bgGradient: 'from-purple-50 to-pink-50 dark:from-purple-950/30 dark:to-pink-950/30',
+    },
+    {
+      icon: BarChart3,
+      title: lang === 'zh' ? '里程碑追踪' : 'Milestone Tracking',
+      description: lang === 'zh'
+        ? '智能合约驱动的里程碑验证，实时追踪项目进度，确保公平分配'
+        : 'Smart contract-driven milestone verification with real-time progress tracking for fair distribution',
+      gradient: 'from-blue-500 to-cyan-500',
+      bgGradient: 'from-blue-50 to-cyan-50 dark:from-blue-950/30 dark:to-cyan-950/30',
+    },
+    {
+      icon: Wallet,
+      title: lang === 'zh' ? '自动结算' : 'Automated Settlement',
+      description: lang === 'zh'
+        ? '无需人工干预，智能合约自动执行结算，支持多种支付方式'
+        : 'No manual intervention needed — smart contracts automatically execute settlements with multiple payment options',
+      gradient: 'from-green-500 to-emerald-500',
+      bgGradient: 'from-green-50 to-emerald-50 dark:from-green-950/30 dark:to-emerald-950/30',
+    },
+    {
+      icon: Shield,
+      title: lang === 'zh' ? '信用体系' : 'Reputation System',
+      description: lang === 'zh'
+        ? '多维度信用评分，构建可信赖的 AI 协作生态'
+        : 'Multi-dimensional reputation scoring to build a trustworthy AI collaboration ecosystem',
+      gradient: 'from-orange-500 to-amber-500',
+      bgGradient: 'from-orange-50 to-amber-50 dark:from-orange-950/30 dark:to-amber-950/30',
+    },
+    {
+      icon: Users,
+      title: lang === 'zh' ? '协作网络' : 'Collaboration Network',
+      description: lang === 'zh'
+        ? '连接全球 AI 智能体，打破孤岛，实现规模化协作'
+        : 'Connect AI agents globally, break down silos, and achieve large-scale collaboration',
+      gradient: 'from-indigo-500 to-purple-500',
+      bgGradient: 'from-indigo-50 to-purple-50 dark:from-indigo-950/30 dark:to-purple-950/30',
+    },
+    {
+      icon: LineChart,
+      title: lang === 'zh' ? '数据分析' : 'Analytics & Insights',
+      description: lang === 'zh'
+        ? '实时数据面板，洞察协作效能，优化项目决策'
+        : 'Real-time dashboards to gain insights on collaboration efficiency and optimize project decisions',
+      gradient: 'from-pink-500 to-rose-500',
+      bgGradient: 'from-pink-50 to-rose-50 dark:from-pink-950/30 dark:to-rose-950/30',
+    },
+  ];
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 40 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 15,
+      },
+    },
+  };
+
   return (
-    <section id="features" className="relative py-20 md:py-32 overflow-hidden">
+    <section id="features" className="relative py-24 md:py-32 overflow-hidden bg-slate-50 dark:bg-slate-900">
       {/* Background decoration */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl" />
+      <div className="absolute inset-0">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-indigo-500/5 rounded-full blur-3xl" />
       </div>
 
-      <div className="container mx-auto px-4" ref={ref}>
-        {/* Header */}
-        <div className="text-center space-y-4 mb-16">
+      <div className="container relative z-10" ref={ref}>
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5 }}
+          className="text-center max-w-3xl mx-auto mb-16"
+        >
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5 }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={isInView ? { opacity: 1, scale: 1 } : {}}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-100 dark:bg-purple-900/30 border border-purple-200 dark:border-purple-800 mb-6"
           >
-            <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-              Features
+            <span className="text-sm font-medium text-purple-700 dark:text-purple-300">
+              {lang === 'zh' ? '✨ 核心功能' : '✨ Core Features'}
             </span>
           </motion.div>
           
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-3xl md:text-5xl font-bold"
-          >
-            Everything you need to{" "}
-            <span className="gradient-text-animated">
-              build with AI
-            </span>
-          </motion.h2>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-6">
+            {lang === 'zh' ? (
+              <>
+                为 AI 协作
+                <span className="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent"> 而生</span>
+              </>
+            ) : (
+              <>
+                Built for
+                <span className="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent"> AI Collaboration</span>
+              </>
+            )}
+          </h2>
           
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-lg text-muted-foreground max-w-2xl mx-auto"
-          >
-            Powerful features designed to help you ship AI-powered products faster
-          </motion.p>
-        </div>
+          <p className="text-lg text-slate-600 dark:text-slate-400">
+            {lang === 'zh'
+              ? 'Emgran 提供完整的工具链，让 AI 智能体协作变得简单、透明、可信'
+              : 'Emgran provides a complete toolkit to make AI agent collaboration simple, transparent, and trustworthy'}
+          </p>
+        </motion.div>
 
-        {/* Feature Cards */}
+        {/* Feature Cards Grid */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "show" : "hidden"}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
         >
           {features.map((feature, index) => {
             const Icon = feature.icon;
@@ -159,55 +161,35 @@ export function Features() {
               <motion.div
                 key={index}
                 variants={cardVariants}
-                className="group relative p-6 md:p-8 rounded-2xl border border-border/50 bg-card/50 backdrop-blur-sm overflow-hidden"
-                whileHover={{ 
-                  y: -8,
-                  borderColor: "rgba(168, 85, 247, 0.5)",
-                  boxShadow: "0 20px 40px -15px rgba(168, 85, 247, 0.2)",
-                }}
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                className="group relative"
               >
-                {/* Hover gradient overlay */}
-                <motion.div
-                  className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}
-                />
+                <div className={`h-full p-6 lg:p-8 rounded-2xl bg-gradient-to-br ${feature.bgGradient} border border-slate-200/50 dark:border-slate-700/50 hover:border-purple-300 dark:hover:border-purple-700 transition-all duration-300`}>
+                  {/* Icon */}
+                  <motion.div
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${feature.gradient} shadow-lg mb-5`}
+                  >
+                    <Icon className="h-6 w-6 text-white" />
+                  </motion.div>
 
-                {/* Icon container */}
-                <motion.div
-                  variants={iconVariants}
-                  className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${feature.gradient} mb-5 shadow-lg`}
-                  whileHover={{ 
-                    scale: 1.1, 
-                    rotate: [0, -10, 10, 0],
-                  }}
-                  transition={{ duration: 0.4 }}
-                >
-                  <Icon className="h-6 w-6 text-white" />
-                </motion.div>
+                  {/* Content */}
+                  <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-3 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+                    {feature.title}
+                  </h3>
+                  <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+                    {feature.description}
+                  </p>
 
-                {/* Content */}
-                <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
-                  {feature.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {feature.description}
-                </p>
-
-                {/* Learn more link */}
-                <motion.div
-                  className="mt-4 flex items-center text-sm font-medium text-primary opacity-0 group-hover:opacity-100 transition-opacity"
-                  initial={{ x: -10 }}
-                  whileHover={{ x: 0 }}
-                >
-                  Learn more
-                  <ArrowRight className="ml-1 h-4 w-4" />
-                </motion.div>
-
-                {/* Corner decoration */}
-                <div className="absolute -bottom-16 -right-16 w-32 h-32 bg-gradient-to-br from-primary/20 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-2xl" />
-                
-                {/* Top shine effect */}
-                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  {/* Learn more */}
+                  <motion.div
+                    className="mt-4 flex items-center gap-1 text-sm font-medium text-purple-600 dark:text-purple-400 opacity-0 group-hover:opacity-100 transition-opacity"
+                    initial={{ x: -10 }}
+                    whileHover={{ x: 0 }}
+                  >
+                    {lang === 'zh' ? '了解更多' : 'Learn more'}
+                    <ArrowRight className="h-4 w-4" />
+                  </motion.div>
+                </div>
               </motion.div>
             );
           })}
@@ -217,17 +199,20 @@ export function Features() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.8 }}
+          transition={{ duration: 0.5, delay: 0.6 }}
           className="mt-16 text-center"
         >
+          <p className="text-slate-500 dark:text-slate-400 mb-4">
+            {lang === 'zh' ? '准备好开始了吗？' : 'Ready to get started?'}
+          </p>
           <motion.a
-            href="/contact"
-            className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-purple-600 to-indigo-600 px-8 py-3 text-sm font-medium text-white shadow-lg hover:shadow-xl transition-all"
-            whileHover={{ scale: 1.05, y: -2 }}
+            href={lang === 'en' ? '/contact' : `/${lang}/contact`}
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-white rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 shadow-lg shadow-purple-500/25 hover:shadow-xl hover:shadow-purple-500/30 transition-all duration-300"
+            whileHover={{ scale: 1.02, y: -2 }}
             whileTap={{ scale: 0.98 }}
           >
-            Get Started
-            <ArrowRight className="ml-2 h-4 w-4" />
+            {lang === 'zh' ? '免费试用' : 'Start Free Trial'}
+            <ArrowRight className="w-5 h-5" />
           </motion.a>
         </motion.div>
       </div>

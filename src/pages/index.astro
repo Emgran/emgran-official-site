@@ -2,32 +2,37 @@
 import Layout from '../layouts/Layout.astro';
 import { Hero } from '../components/Hero';
 import { Features } from '../components/Features';
+import { HowItWorks } from '../components/HowItWorks';
 import { Testimonials } from '../components/Testimonials';
-import { TrustBadges, LiveUserCount, StatsTicker } from '../components/SocialProof';
+import { CTASection } from '../components/CTASection';
+import { TrustBadges, StatsTicker } from '../components/SocialProof';
 import { Pricing } from '../components/Pricing';
 import { useTranslations } from '../i18n';
 
 const lang = 'en';
-const t = (key: string) => useTranslations(lang)(key as any);
 ---
 
 <Layout title="Emgran - AI Collaboration Settlement Platform" lang={lang}>
-  <!-- Main Hero Section -->
+  <!-- Hero Section -->
   <Hero lang={lang} client:load />
   
-  <!-- Features Section -->
-  <Features client:visible />
-  
-  <!-- Social Proof Section -->
-  <section class="py-16 md:py-24 bg-muted/30">
+  <!-- Trust Badges -->
+  <section class="py-8 bg-white dark:bg-slate-950 border-y border-slate-100 dark:border-slate-800">
     <div class="container">
-      <div class="text-center mb-12">
-        <LiveUserCount client:load />
-      </div>
+      <TrustBadges />
+    </div>
+  </section>
+  
+  <!-- Features Section -->
+  <Features lang={lang} client:visible />
+  
+  <!-- How It Works -->
+  <HowItWorks lang={lang} client:visible />
+  
+  <!-- Stats Ticker -->
+  <section class="py-16 bg-slate-50 dark:bg-slate-900">
+    <div class="container">
       <StatsTicker client:visible />
-      <div class="mt-12">
-        <TrustBadges />
-      </div>
     </div>
   </section>
   
@@ -36,4 +41,7 @@ const t = (key: string) => useTranslations(lang)(key as any);
   
   <!-- Pricing -->
   <Pricing lang={lang} client:visible />
+  
+  <!-- CTA Section -->
+  <CTASection lang={lang} client:visible />
 </Layout>
