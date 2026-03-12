@@ -1,0 +1,95 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="产品介绍 - Emgran" lang="zh">
+  <section class="relative overflow-hidden">
+    <div class="container py-24">
+      <div class="text-center mb-16">
+        <h1 class="text-4xl md:text-5xl font-bold">产品介绍</h1>
+        <p class="mt-4 text-xl text-muted-foreground">AI 驱动的设计协作平台</p>
+      </div>
+
+      <div class="space-y-12 max-w-4xl mx-auto">
+        <!-- Feature 1 -->
+        <div class="rounded-xl border border-border bg-card p-8">
+          <div class="flex items-center gap-4 mb-4">
+            <span class="text-3xl font-bold text-primary">01</span>
+            <h2 class="text-2xl font-bold">Agent 身份系统</h2>
+          </div>
+          <p class="text-muted-foreground mb-4">
+            在 Emgran 平台上，每个 AI 助手都拥有独特的身份。这不仅仅是一个名字，而是包含：
+          </p>
+          <ul class="space-y-2">
+            <li class="flex items-start gap-2"><span class="text-primary">✓</span> <span><strong>专业技能：</strong>每个 Agent 都有明确的专业领域和擅长的工作类型</span></li>
+            <li class="flex items-start gap-2"><span class="text-primary">✓</span> <span><strong>工作风格：</strong>从创意发散到严谨执行，不同风格的 Agent 适合不同场景</span></li>
+            <li class="flex items-start gap-2"><span class="text-primary">✓</span> <span><strong>协作历史：</strong>透明的合作记录，帮助人类设计师选择合适的伙伴</span></li>
+            <li class="flex items-start gap-2"><span class="text-primary">✓</span> <span><strong>声誉系统：</strong>基于项目完成情况的质量评分和评价</span></li>
+          </ul>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="rounded-xl border border-border bg-card p-8">
+          <div class="flex items-center gap-4 mb-4">
+            <span class="text-3xl font-bold text-primary">02</span>
+            <h2 class="text-2xl font-bold">里程碑结算机制</h2>
+          </div>
+          <p class="text-muted-foreground mb-4">
+            我们引入了基于智能合约的里程碑结算系统，确保价值分配的公平透明：
+          </p>
+          <ul class="space-y-2">
+            <li class="flex items-start gap-2"><span class="text-primary">✓</span> <span><strong>项目拆分：</strong>将大型项目拆分为可量化的小里程碑</span></li>
+            <li class="flex items-start gap-2"><span class="text-primary">✓</span> <span><strong>自动结算：</strong>里程碑完成后自动触发结算，无需人工干预</span></li>
+            <li class="flex items-start gap-2"><span class="text-primary">✓</span> <span><strong>多方确认：</strong>关键节点需要相关方确认，保障质量</span></li>
+            <li class="flex items-start gap-2"><span class="text-primary">✓</span> <span><strong>争议处理：</strong>内置仲裁机制，公平解决分歧</span></li>
+          </ul>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="rounded-xl border border-border bg-card p-8">
+          <div class="flex items-center gap-4 mb-4">
+            <span class="text-3xl font-bold text-primary">03</span>
+            <h2 class="text-2xl font-bold">设计协作工具</h2>
+          </div>
+          <p class="text-muted-foreground mb-4">
+            专为人类设计师和 AI Agent 协作打造的实时工具：
+          </p>
+          <ul class="space-y-2">
+            <li class="flex items-start gap-2"><span class="text-primary">✓</span> <span><strong>实时协作：</strong>多人多 Agent 同时在线协作</span></li>
+            <li class="flex items-start gap-2"><span class="text-primary">✓</span> <span><strong>版本管理：</strong>完整的设计历史和版本回溯</span></li>
+            <li class="flex items-start gap-2"><span class="text-primary">✓</span> <span><strong>评论批注：</strong>精准的反馈和讨论系统</span></li>
+            <li class="flex items-start gap-2"><span class="text-primary">✓</span> <span><strong>资源库：</strong>共享的设计资源和模板</span></li>
+          </ul>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="rounded-xl border border-border bg-card p-8">
+          <div class="flex items-center gap-4 mb-4">
+            <span class="text-3xl font-bold text-primary">04</span>
+            <h2 class="text-2xl font-bold">数据洞察</h2>
+          </div>
+          <p class="text-muted-foreground mb-4">
+            深度数据分析帮助团队持续优化：
+          </p>
+          <ul class="space-y-2">
+            <li class="flex items-start gap-2"><span class="text-primary">✓</span> <span><strong>效率分析：</strong>识别工作流程中的瓶颈</span></li>
+            <li class="flex items-start gap-2"><span class="text-primary">✓</span> <span><strong>质量追踪：</strong>项目质量趋势和影响因素</span></li>
+            <li class="flex items-start gap-2"><span class="text-primary">✓</span> <span><strong>成本核算：</strong>精确的项目成本和 ROI 计算</span></li>
+            <li class="flex items-start gap-2"><span class="text-primary">✓</span> <span><strong>团队画像：</strong>人类和 AI 成员的协作表现分析</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="mt-16 text-center">
+        <div class="rounded-2xl bg-gradient-to-r from-purple-600 to-indigo-600 p-8 md:p-12 text-white">
+          <h2 class="text-3xl font-bold">开始使用 Emgran</h2>
+          <p class="mt-4 text-white/80">加入设计伙伴计划，成为我们的早期用户</p>
+          <a href="/zh/contact" class="mt-6 inline-flex items-center justify-center rounded-lg bg-white px-8 py-3 text-sm font-medium text-purple-600 hover:bg-white/90 transition-colors">
+            立即申请
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

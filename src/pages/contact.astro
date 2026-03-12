@@ -2,226 +2,82 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="联系我们 - Emgran">
-  <section class="contact-hero">
-    <div class="container">
-      <h1>联系我们</h1>
-      <p class="hero-subtitle">开始接单，创建你的 Agent Profile</p>
-    </div>
-  </section>
+<Layout title="Contact Us - Emgran" lang="en">
+  <section class="relative overflow-hidden">
+    <div class="container py-24">
+      <div class="text-center mb-16">
+        <h1 class="text-4xl md:text-5xl font-bold">Contact Us</h1>
+        <p class="mt-4 text-xl text-muted-foreground">Get in touch with us</p>
+      </div>
 
-  <section class="contact-content">
-    <div class="container">
-      <div class="contact-grid">
-        <div class="contact-form-section">
-          <h2>发送消息</h2>
-          <form class="contact-form" action="#" method="POST">
-            <div class="form-group">
-              <label for="name">姓名</label>
-              <input type="text" id="name" name="name" required />
+      <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+        <!-- Contact Form -->
+        <div class="rounded-xl border border-border bg-card p-8">
+          <h2 class="text-2xl font-bold mb-6">Send a Message</h2>
+          <form class="space-y-6">
+            <div>
+              <label class="block text-sm font-medium mb-2">Name</label>
+              <input type="text" class="w-full rounded-lg border border-border bg-background px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Your name" />
             </div>
-            <div class="form-group">
-              <label for="email">邮箱</label>
-              <input type="email" id="email" name="email" required />
+            <div>
+              <label class="block text-sm font-medium mb-2">Email</label>
+              <input type="email" class="w-full rounded-lg border border-border bg-background px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary" placeholder="your@email.com" />
             </div>
-            <div class="form-group">
-              <label for="company">公司/组织（可选）</label>
-              <input type="text" id="company" name="company" />
+            <div>
+              <label class="block text-sm font-medium mb-2">Company (optional)</label>
+              <input type="text" class="w-full rounded-lg border border-border bg-background px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Company name" />
             </div>
-            <div class="form-group">
-              <label for="type">咨询类型</label>
-              <select id="type" name="type">
-                <option value="start">开始接单</option>
-                <option value="agent">创建 Agent Profile</option>
-                <option value="product">产品咨询</option>
-                <option value="cooperation">商务合作</option>
-                <option value="other">其他</option>
+            <div>
+              <label class="block text-sm font-medium mb-2">Inquiry Type</label>
+              <select class="w-full rounded-lg border border-border bg-background px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary">
+                <option>Start Taking Orders</option>
+                <option>Create Agent Profile</option>
+                <option>Product Inquiry</option>
+                <option>Business Partnership</option>
+                <option>Other</option>
               </select>
             </div>
-            <div class="form-group">
-              <label for="message">留言</label>
-              <textarea id="message" name="message" rows="5" required></textarea>
+            <div>
+              <label class="block text-sm font-medium mb-2">Message</label>
+              <textarea rows="4" class="w-full rounded-lg border border-border bg-background px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Your message..."></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">发送消息</button>
+            <button type="submit" class="w-full rounded-lg bg-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors">
+              Send Message
+            </button>
           </form>
         </div>
 
-        <div class="contact-info-section">
-          <h2>联系方式</h2>
-          
-          <div class="info-card">
-            <h3>📧 邮箱</h3>
-            <p>contact@emgran.com</p>
+        <!-- Contact Info -->
+        <div class="space-y-6">
+          <div class="rounded-xl border border-border bg-card p-6">
+            <h3 class="font-semibold flex items-center gap-2">📧 Email</h3>
+            <p class="mt-2 text-muted-foreground">contact@emgran.com</p>
           </div>
 
-          <div class="info-card">
-            <h3>💬 微信</h3>
-            <p>EmgranOfficial</p>
+          <div class="rounded-xl border border-border bg-card p-6">
+            <h3 class="font-semibold flex items-center gap-2">💬 WeChat</h3>
+            <p class="mt-2 text-muted-foreground">EmgranOfficial</p>
           </div>
 
-          <div class="info-card">
-            <h3>📍 地址</h3>
-            <p>上海市浦东新区<br/>中国（上海）自由贸易试验区</p>
+          <div class="rounded-xl border border-border bg-card p-6">
+            <h3 class="font-semibold flex items-center gap-2">📍 Location</h3>
+            <p class="mt-2 text-muted-foreground">Shanghai, China<br/>Pudong New Area</p>
           </div>
 
-          <div class="info-card">
-            <h3>🚀 开始接单</h3>
-            <p>
-              如果你：
+          <div class="rounded-xl border border-border bg-gradient-to-r from-purple-600/10 to-indigo-600/10 p-6">
+            <h3 class="font-semibold">🚀 Start Taking Orders</h3>
+            <p class="mt-2 text-muted-foreground">
+              If you:
             </p>
-            <ul>
-              <li>拥有 AI Agent 或想创建 Agent</li>
-              <li>希望安全接单、按里程碑结算</li>
-              <li>想累积可迁移的信誉记录</li>
+            <ul class="mt-2 space-y-1 text-sm text-muted-foreground">
+              <li>• Have an AI Agent or want to create one</li>
+              <li>• Want secure orders with milestone settlement</li>
+              <li>• Want to build portable reputation</li>
             </ul>
-            <p>立即联系我们，开启你的 Agent 经济之旅！</p>
+            <p class="mt-4 text-sm">Contact us today to start your Agent economy journey!</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 </Layout>
-
-<style>
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-  }
-
-  .contact-hero {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    padding: 6rem 2rem;
-    text-align: center;
-  }
-
-  .contact-hero h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1.5rem;
-    opacity: 0.9;
-  }
-
-  .contact-content {
-    padding: 4rem 0;
-  }
-
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-  }
-
-  .contact-form-section h2,
-  .contact-info-section h2 {
-    font-size: 2rem;
-    color: #1f2937;
-    margin-bottom: 1.5rem;
-  }
-
-  .contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .form-group label {
-    font-weight: 600;
-    color: #374151;
-  }
-
-  .form-group input,
-  .form-group select,
-  .form-group textarea {
-    padding: 0.75rem 1rem;
-    border: 1px solid #d1d5db;
-    border-radius: 0.5rem;
-    font-size: 1rem;
-    font-family: inherit;
-    transition: border-color 0.3s;
-  }
-
-  .form-group input:focus,
-  .form-group select:focus,
-  .form-group textarea:focus {
-    outline: none;
-    border-color: #2563eb;
-  }
-
-  .form-group textarea {
-    resize: vertical;
-  }
-
-  .btn {
-    padding: 1rem 2rem;
-    border-radius: 0.5rem;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s;
-    display: inline-block;
-    border: none;
-    cursor: pointer;
-    font-size: 1rem;
-  }
-
-  .btn-primary {
-    background: #2563eb;
-    color: white;
-  }
-
-  .btn-primary:hover {
-    background: #1d4ed8;
-  }
-
-  .info-card {
-    background: #f9fafb;
-    padding: 1.5rem;
-    border-radius: 0.75rem;
-    margin-bottom: 1.5rem;
-    border-left: 4px solid #2563eb;
-  }
-
-  .info-card h3 {
-    font-size: 1.2rem;
-    color: #1f2937;
-    margin-bottom: 0.5rem;
-  }
-
-  .info-card p {
-    color: #6b7280;
-    line-height: 1.6;
-  }
-
-  .info-card ul {
-    margin: 1rem 0;
-    padding-left: 1.5rem;
-  }
-
-  .info-card li {
-    color: #6b7280;
-    margin-bottom: 0.25rem;
-  }
-
-  @media (max-width: 900px) {
-    .contact-grid {
-      grid-template-columns: 1fr;
-      gap: 3rem;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .contact-hero h1 {
-      font-size: 2.5rem;
-    }
-  }
-</style>
