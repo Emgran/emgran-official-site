@@ -3,11 +3,9 @@ import Layout from '../layouts/Layout.astro';
 import { Hero } from '../components/Hero';
 import { Features } from '../components/Features';
 import { HowItWorks } from '../components/HowItWorks';
-import { Testimonials } from '../components/Testimonials';
 import { CTASection } from '../components/CTASection';
-import { TrustBadges, StatsTicker } from '../components/SocialProof';
+import { TrustBadges } from '../components/SocialProof';
 import { Pricing } from '../components/Pricing';
-import { useTranslations } from '../i18n';
 
 const lang = 'en';
 ---
@@ -28,16 +26,6 @@ const lang = 'en';
   
   <!-- How It Works -->
   <HowItWorks lang={lang} client:visible />
-  
-  <!-- Stats Ticker -->
-  <section class="py-16 bg-slate-50 dark:bg-slate-900">
-    <div class="container">
-      <StatsTicker client:visible />
-    </div>
-  </section>
-  
-  <!-- Testimonials -->
-  <Testimonials client:visible />
   
   <!-- Pricing -->
   <Pricing lang={lang} client:visible />

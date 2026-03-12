@@ -48,6 +48,7 @@ export const ui = {
     'cta.button': 'Get Started',
     
     // Footer
+    'footer.description': 'AI Collaboration Settlement Platform',
     'footer.tagline': 'AI Collaboration Settlement Platform',
     'footer.product': 'Product',
     'footer.company': 'Company',
@@ -149,6 +150,7 @@ export const ui = {
     'cta.button': '立即开始',
     
     // Footer
+    'footer.description': 'AI 协作结算平台',
     'footer.tagline': 'AI 协作结算平台',
     'footer.product': '产品',
     'footer.company': '公司',

@@ -12,19 +12,19 @@ export function Footer({ lang = defaultLang }: FooterProps) {
 
   const productLinks = [
     { label: t('nav.product'), href: getLocalizedPath('/product', lang) },
-    { label: t('nav.pricing'), href: getLocalizedPath('/pricing', lang) },
-    { label: t('nav.docs'), href: getLocalizedPath('/docs', lang) },
+    // { label: t('nav.pricing'), href: getLocalizedPath('/pricing', lang) }, // Hidden - Coming Soon
+    // { label: t('nav.docs'), href: getLocalizedPath('/docs', lang) }, // Hidden - Coming Soon
   ];
 
   const companyLinks = [
     { label: t('nav.about'), href: getLocalizedPath('/about', lang) },
-    { label: t('nav.blog'), href: getLocalizedPath('/blog', lang) },
+    // { label: t('nav.blog'), href: getLocalizedPath('/blog', lang) }, // Hidden - Coming Soon
     { label: t('nav.contact'), href: getLocalizedPath('/contact', lang) },
   ];
 
   const legalLinks = [
-    { label: t('footer.privacy'), href: getLocalizedPath('/privacy', lang) },
-    { label: t('footer.terms'), href: getLocalizedPath('/terms', lang) },
+    // { label: t('footer.privacy'), href: getLocalizedPath('/privacy', lang) }, // Hidden - Coming Soon
+    // { label: t('footer.terms'), href: getLocalizedPath('/terms', lang) }, // Hidden - Coming Soon
   ];
 
   const socialLinks = [

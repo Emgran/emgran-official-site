@@ -26,11 +26,8 @@ export function Hero({ lang = defaultLang }: HeroProps) {
     }
   };
 
-  const stats = [
-    { value: '10,000+', label: lang === 'zh' ? '活跃用户' : 'Active Users' },
-    { value: '99.9%', label: lang === 'zh' ? '结算准确率' : 'Settlement Accuracy' },
-    { value: '50M+', label: lang === 'zh' ? '处理交易' : 'Transactions' },
-  ];
+  // Removed fake stats - Coming Soon
+  const stats: { value: string; label: string }[] = [];
 
   const features = [
     { icon: Zap, text: lang === 'zh' ? '即时结算' : 'Instant Settlement' },
@@ -172,26 +169,8 @@ export function Hero({ lang = defaultLang }: HeroProps) {
               </motion.a>
             </motion.div>
 
-            {/* Stats */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.7 }}
-              className="mt-12 pt-8 border-t border-slate-200 dark:border-slate-800"
-            >
-              <div className="grid grid-cols-3 gap-8">
-                {stats.map((stat, index) => (
-                  <div key={index} className="text-center lg:text-left">
-                    <div className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
-                      {stat.value}
-                    </div>
-                    <div className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-                      {stat.label}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
+            {/* Stats - Coming Soon */}
+            {/* Hidden until we have real metrics */}
           </motion.div>
 
           {/* Right Content - Hero Image/Illustration */}

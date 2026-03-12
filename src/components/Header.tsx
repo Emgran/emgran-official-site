@@ -49,7 +49,7 @@ export function Header({ lang = defaultLang }: HeaderProps) {
     { label: t('nav.home'), href: lang === defaultLang ? '/' : `/${lang}` },
     { label: t('nav.about'), href: getLocalizedPath('/about', lang) },
     { label: t('nav.product'), href: getLocalizedPath('/product', lang) },
-    { label: t('nav.pricing'), href: getLocalizedPath('/pricing', lang) },
+    // { label: t('nav.pricing'), href: getLocalizedPath('/pricing', lang) }, // Hidden - Coming Soon
     { label: t('nav.contact'), href: getLocalizedPath('/contact', lang) },
   ];
 
