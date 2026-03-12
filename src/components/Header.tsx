@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
-import { Menu, X, Globe } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { languages, useTranslations, getLocalizedPath, defaultLang } from '@/i18n';
 
 interface HeaderProps {
@@ -9,7 +9,6 @@ interface HeaderProps {
 
 export function Header({ lang = defaultLang }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isLangOpen, setIsLangOpen] = useState(false);
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
   
   const t = (key: string) => useTranslations(lang as any)(key as any);
@@ -40,21 +39,6 @@ export function Header({ lang = defaultLang }: HeaderProps) {
     { label: t('nav.contact'), href: getLocalizedPath('/contact', lang) },
   ];
 
-  const switchLanguage = (newLang: string) => {
-    const currentPath = window.location.pathname;
-    let newPath = currentPath;
-    
-    if (lang !== defaultLang) {
-      newPath = currentPath.replace(`/${lang}`, '') || '/';
-    }
-    
-    if (newLang !== defaultLang) {
-      newPath = `/${newLang}${newPath === '/' ? '' : newPath}`;
-    }
-    
-    window.location.href = newPath;
-  };
-
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
@@ -76,32 +60,27 @@ export function Header({ lang = defaultLang }: HeaderProps) {
         </nav>
 
         <div className="flex items-center space-x-4">
-          {/* Language Switcher */}
-          <div className="relative">
-            <button
-              onClick={() => setIsLangOpen(!isLangOpen)}
-              className="flex items-center space-x-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+          {/* Language Switcher - Inline Style */}
+          <div className="language-switcher flex items-center space-x-1 text-sm">
+            <a
+              href="/"
+              className={cn(
+                "font-medium transition-colors",
+                lang === 'en' ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+              )}
             >
-              <Globe className="h-4 w-4" />
-              <span className="hidden sm:inline">{languages[lang as keyof typeof languages]}</span>
-            </button>
-            
-            {isLangOpen && (
-              <div className="absolute right-0 mt-2 w-32 rounded-md bg-popover border border-border shadow-lg">
-                {Object.entries(languages).map(([code, name]) => (
-                  <button
-                    key={code}
-                    onClick={() => switchLanguage(code)}
-                    className={cn(
-                      "block w-full px-4 py-2 text-left text-sm hover:bg-accent transition-colors",
-                      code === lang && "bg-accent"
-                    )}
-                  >
-                    {name}
-                  </button>
-                ))}
-              </div>
-            )}
+              EN
+            </a>
+            <span className="text-muted-foreground">|</span>
+            <a
+              href="/zh/"
+              className={cn(
+                "font-medium transition-colors",
+                lang === 'zh' ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+              )}
+            >
+              中文
+            </a>
           </div>
 
           {/* Theme Toggle */}
